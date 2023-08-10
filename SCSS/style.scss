@@ -1,5 +1,58 @@
 $title_logo-font: Shrikhand;
-$main-font: Roboto;
+$main-font: Roboto, sans-serif;
 $main-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
+$background: #F6F6F6;
+$option1-font-color: #353535;
+$option2-font-color: white;
+$gradient-color: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%);
+
+@mixin btn-shadow {
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+@mixin section-shadow {
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+/**ALL**/
+a {
+    text-decoration: none;
+    &a:visited {
+        color: inherit;
+    }
+    &a:active {
+        color: inherit;
+    }
+}
+
+* {
+    font-family: $main-font;
+    /**box-sizing: border-box;**/
+}
+
+/**HEADER**/
+
+.head-site {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__main-logo {
+        padding: 0.875rem 5.5625rem 0.8125rem 5.5625rem;
+        @include section-shadow;
+        z-index: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    &__geoloc {
+        background-color: $background;
+        display: flex;
+        justify-content: center;
+        gap: 1.0625rem;
+        width: 100%;
+        padding: 1rem;
+        color: $option1-font-color;
+    }
+}

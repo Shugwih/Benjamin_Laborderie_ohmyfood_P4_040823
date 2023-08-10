@@ -1,3 +1,41 @@
+/**ALL**/
+a {
+  text-decoration: none;
+}
+aa:visited {
+  color: inherit;
+}
+aa:active {
+  color: inherit;
+}
 
+* {
+  font-family: Roboto, sans-serif;
+  /**box-sizing: border-box;**/
+}
+
+/**HEADER**/
+.head-site {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.head-site__main-logo {
+  padding: 0.875rem 5.5625rem 0.8125rem 5.5625rem;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.head-site__geoloc {
+  background-color: #F6F6F6;
+  display: flex;
+  justify-content: center;
+  gap: 1.0625rem;
+  width: 100%;
+  padding: 1rem;
+  color: #353535;
+}
 
 /*# sourceMappingURL=style.css.map */
