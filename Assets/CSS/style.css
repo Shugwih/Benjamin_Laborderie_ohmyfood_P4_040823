@@ -1,12 +1,31 @@
+/**Font-weight For SCSS**/
+/**Color For SCSS**/
+/**#9356DC primary purple**/
+/**#FF79DA secondary purple for gradient**/
+/**#99E2D0 light green for some style details**/
+/**EAEAEA grey for background**/
+/**F6F6F6 light grey for background**/
+/**#353535 dark grey for font**/
+/**#FFFFFF white for font**/
+/**Gradient for btn**/
+/**Mixin For SCSS**/
 /**ALL**/
+body {
+  margin: auto;
+}
+
 a {
   text-decoration: none;
 }
-aa:visited {
+a:visited {
   color: inherit;
 }
-aa:active {
+a:active {
   color: inherit;
+}
+
+.main-restaurants img {
+  display: none;
 }
 
 * {
@@ -21,21 +40,49 @@ aa:active {
   align-items: center;
 }
 .head-site__main-logo {
-  padding: 0.875rem 5.5625rem 0.8125rem 5.5625rem;
+  padding: 0.875rem 0 0.8125rem 0;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-  z-index: 1;
+  z-index: 1; /**For box-shadow**/
   width: 100%;
   display: flex;
   justify-content: center;
 }
 .head-site__geoloc {
-  background-color: #F6F6F6;
+  background-color: #EAEAEA;
+  font-weight: 500;
   display: flex;
   justify-content: center;
   gap: 1.0625rem;
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0 1rem 0;
   color: #353535;
+}
+
+/**Hero**/
+/**TODO width**/
+.hero__hero-all {
+  text-align: center;
+  background-color: #F6F6F6;
+  padding: 2rem;
+}
+.hero__hero-all__hero-title h1 {
+  margin: 0 0 1rem 0;
+}
+.hero__hero-all__hero-description {
+  color: #353535;
+}
+
+.hero-btn__btn--hero-btn-style {
+  background: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%);
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 1.5625rem;
+  padding: 0 1.5rem;
+  height: 3.125rem;
+  margin-top: 1rem;
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */

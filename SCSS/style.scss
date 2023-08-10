@@ -1,30 +1,59 @@
 $title_logo-font: Shrikhand;
 $main-font: Roboto, sans-serif;
-$main-color: #9356DC;
-$secondary-color: #FF79DA;
-$tertiary-color: #99E2D0;
-$background: #F6F6F6;
-$option1-font-color: #353535;
-$option2-font-color: white;
-$gradient-color: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%);
 
-@mixin btn-shadow {
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-}
+/**Font-weight For SCSS**/
+$light-weight: 300;
+$normal-weight: 400;
+$medium-weight: 500;
+$bold-weight: 700;
+$black-weight: 900;
 
+/**Color For SCSS**/
+$main-color: #9356DC; /**#9356DC primary purple**/
+$secondary-color: #FF79DA; /**#FF79DA secondary purple for gradient**/
+$tertiary-color: #99E2D0; /**#99E2D0 light green for some style details**/
+$background: #EAEAEA; /**EAEAEA grey for background**/
+$light-background: #F6F6F6; /**F6F6F6 light grey for background**/
+$option1-font-color: #353535; /**#353535 dark grey for font**/
+$option2-font-color: #FFFFFF; /**#FFFFFF white for font**/
+$gradient-color: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%); /**Gradient for btn**/
+
+/**Mixin For SCSS**/
 @mixin section-shadow {
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
+@mixin main-btn-style {
+    background: $gradient-color;
+    color: $option2-font-color;
+    font-size: 1rem;
+    font-weight: $medium-weight;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 1.5625rem;
+    padding: 0 1.5rem;
+    height: 3.125rem;
+    margin-top: 1rem;
+    border: none;
+}
+
 /**ALL**/
+
+body {
+    margin: auto;
+}
+
 a {
     text-decoration: none;
-    &a:visited {
+    &:visited {
         color: inherit;
     }
-    &a:active {
+    &:active {
         color: inherit;
     }
+}
+
+.main-restaurants img {
+    display: none;
 }
 
 * {
@@ -39,20 +68,49 @@ a {
     flex-direction: column;
     align-items: center;
     &__main-logo {
-        padding: 0.875rem 5.5625rem 0.8125rem 5.5625rem;
+        padding: 0.875rem 0 0.8125rem 0;
         @include section-shadow;
-        z-index: 1;
+        z-index: 1; /**For box-shadow**/
         width: 100%;
         display: flex;
         justify-content: center;
     }
     &__geoloc {
         background-color: $background;
+        font-weight: $medium-weight;
         display: flex;
         justify-content: center;
         gap: 1.0625rem;
         width: 100%;
-        padding: 1rem;
+        padding: 1rem 0 1rem 0;
         color: $option1-font-color;
+    }
+}
+
+/**Hero**/
+/**TODO width**/
+
+.hero {
+    &__hero-all {
+        text-align: center;
+        background-color: $light-background;
+        padding: 2rem;
+        &__hero-title {
+            
+        }
+        &__hero-title h1 {
+            margin: 0 0 1rem 0;
+        }
+        &__hero-description {
+            color: $option1-font-color;
+        }
+    }
+}
+
+.hero-btn {
+    &__btn {
+        &--hero-btn-style {
+            @include main-btn-style;
+        }
     }
 }
