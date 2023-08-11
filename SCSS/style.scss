@@ -23,7 +23,7 @@ $gradient-color: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%); /**Gradient 
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
-@mixin main-btn-style {
+@mixin generic-btn-style {
     background: $gradient-color;
     color: $option2-font-color;
     font-size: 1rem;
@@ -41,6 +41,10 @@ $gradient-color: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%); /**Gradient 
 body {
     margin: auto;
 }
+/**
+ul {
+    list-style-type: none;
+}**/
 
 a {
     text-decoration: none;
@@ -63,11 +67,11 @@ a {
 
 /**HEADER**/
 
-.head-site {
+.top-site {
     display: flex;
     flex-direction: column;
     align-items: center;
-    &__main-logo {
+    &__top-logo {
         padding: 0.875rem 0 0.8125rem 0;
         @include section-shadow;
         z-index: 1; /**For box-shadow**/
@@ -75,7 +79,7 @@ a {
         display: flex;
         justify-content: center;
     }
-    &__geoloc {
+    &__top-geolocation {
         background-color: $background;
         font-weight: $medium-weight;
         display: flex;
@@ -88,16 +92,12 @@ a {
 }
 
 /**Hero**/
-/**TODO width**/
 
 .hero {
     &__hero-all {
         text-align: center;
         background-color: $light-background;
         padding: 2rem;
-        &__hero-title {
-            
-        }
         &__hero-title h1 {
             margin: 0 0 1rem 0;
         }
@@ -107,10 +107,54 @@ a {
     }
 }
 
-.hero-btn {
-    &__btn {
-        &--hero-btn-style {
-            @include main-btn-style;
+.hero-all {
+    &__hero-btn-container {
+        &--generic-btn {
+            @include generic-btn-style;
+        }
+    }
+}
+
+/**Guide**/
+
+.guide {
+    &__g-container {
+        &__g-title h2 {
+            margin: 0;
+            padding: 3rem 5rem 1.62rem 1.25rem;
+        }
+        &__g-all-step {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            padding: 0;
+            gap: 1.56rem;
+        }
+    }
+}
+
+.g-all-step {
+    &__g-step {
+        border: 1px solid red;
+        border-radius: 1.25rem;
+        padding: 1rem 0;
+        align-items: center;
+        margin: 0 2.03rem 0 1.25rem;
+        background-color: $light-background;
+        font-weight: $medium-weight;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+        &__g-number-order {
+            display: inline-flex;
+            border: 1px solid transparent;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: $main-color;
+            color: $option2-font-color;
+            font-size: 0.88638rem;
+            font-weight: $medium-weight;
         }
     }
 }

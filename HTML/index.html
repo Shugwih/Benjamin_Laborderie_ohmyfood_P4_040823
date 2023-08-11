@@ -16,144 +16,144 @@
         <!--TODO: FOR THE LOADER-->
     </div>
     <!--HEADER-->
-    <header class="head-site">
-        <div class="head-site__main-logo main-logo">
+    <header id="hat" class="top-site">
+        <div class="top-site__top-logo">
             <img src="../Assets/Images/Images et textes Ohmyfood/images/logo/ohmyfood@2x.svg" alt="Logo">
         </div>
         <!--Geo-localisation-->
-        <div class="head-site__geoloc geoloc">
-            <i class="head-site__geoloc__fa-geo fa-solid fa-location-dot geoloc-fa"></i>
-            <span class="head-site__geoloc__txt-geo txt-geo">Paris, Belleville</span>
+        <div class="top-site__top-geolocation">
+            <i class="top-site__top-geolocation__geofa fa-solid fa-location-dot"></i>
+            <span class="top-site__top-geolocation__geo-txt">Paris, Belleville</span>
         </div>
     </header>
     <!--MAIN-->
-    <main class="core-site">
+    <main id="master-container" class="master" role="main">
         <!--SECTION H1 // Hero-->
-        <section class="core-site__hero hero">
-            <div class="hero__hero-all">
-                <div class="hero__hero-all__hero-title hero-title">
+        <section id="hero" class="master__hero hero">
+            <div class="hero__hero-all hero-all">
+                <div class="hero-all__hero-title">
                     <h1>Réserver le menu qui vous convient</h1>
                 </div>
-                <div class="hero__hero-all__hero-description hero-description">
-                    <span class="hero-description__descr-txt">Découvrez des restaurants d'exception, sélectionnés par nos soins</span>
+                <div class="hero-all__hero-description">
+                    <span class="hero-all__hero-description__hero-txt">Découvrez des restaurants d'exception, sélectionnés par nos soins</span>
                 </div>
-                <div class="hero__hero-all__hero-btn hero-btn">
-                    <button class="hero-btn__btn--hero-btn-style btn --btn-style">
+                <div class="hero-all__hero-btn-container">
+                    <button class="hero-all__hero-btn-container--generic-btn hero-btn">
                         Explorer nos restaurants
                     </button>
                 </div>
             </div>
         </section>
-        <!--SECTION EXPLAIN AND STEP-->
-        <section class="core-site__explain">
-            <div class="explain__all-exp">
-                <div class="explain__all-exp__title-exp">
+        <!--SECTION GUIDE-->
+        <section id="guide" class="master__guide guide">
+            <div class="guide__g-container">
+                <div class="guide__g-container__g-title">
                     <h2>Fonctionnement</h2>
                 </div>
-                <div class="explain__all-exp__all-exp-list all-exp-list">
-                    <ul class="all-exp-list__exp-step exp-step">
-                        <li class="exp-step__step-item step-item">
-                            <span class="exp-step__step-item__exp-order-numb exp-order-numb-1 exp-order-numb">1</span>
-                            <i class="exp-step__step-item__fa-exp fa-exp fa-solid fa-mobile-screen-button"></i>
-                            <span class="exp-step__step-item__exp-txt exp-txt">Choisissez un restaurant</span>
-                        </li>
-                        <li class="exp-step__step-item step-item">
-                            <span class="exp-step__step-item__exp-order-numb exp-order-numb-2 exp-order-numb">2</span>
-                            <i class="exp-step__step-item__fa-exp fa-exp fa-solid fa-list-ul"></i>
-                            <span class="exp-step__step-item__exp-txt exp-txt">Composez votre menu</span>
-                        </li>
-                        <li class="exp-step__step-item step-item">
-                            <span class="exp-step__step-item__exp-order-numb exp-order-numb-3 exp-order-numb">3</span>
-                            <i class="exp-step__step-item__fa-exp fa-exp fa-solid fa-store"></i>
-                            <span class="exp-step__step-item__exp-txt exp-txt">Dégustez au restaurant</span>
-                        </li>
-                    </ul>
+                <div class="guide__g-container__g-all-step g-all-step">
+                    <!--<ol class="all-exp-list__exp-step exp-step">-->
+                        <div class="g-all-step__g-step">
+                            <span class="g-all-step__g-step__g-number-order">1</span>
+                            <i class="g-all-step__g-step__stepfa fa-solid fa-mobile-screen-button"></i>
+                            <span class="g-all-step__g-step__g-step-txt">Choisissez un restaurant</span>
+                        </div>
+                        <div class="g-all-step__g-step">
+                            <span class="g-all-step__g-step__g-number-order">2</span>
+                            <i class="g-all-step__g-step__stepfa fa-solid fa-list-ul"></i>
+                            <span class="g-all-step__g-step__g-step-txt">Composez votre menu</span>
+                        </div>
+                        <div class="g-all-step__g-step">
+                            <span class="g-all-step__g-step__g-number-order">3</span>
+                            <i class="g-all-step__g-step__stepfa fa-exp fa-solid fa-store"></i>
+                            <span class="g-all-step__g-step__g-step-txt">Dégustez au restaurant</span>
+                        </div>
+                    <!--</ol>-->
                 </div>
             </div>
         </section>
         <!--SECTION RESTAURANT-->
-        <section class="main-restaurants">
-            <div class="main-restaurants__all-rest all-rest">
-                <div class="main-restaurants__all-rest__rest-title rest-title">
+        <section id="restaurant" class="master__restaurant restaurant">
+            <div class="restaurant__resto-all resto-all">
+                <div class="resto-all__resto-title">
                     <h2>Restaurants</h2>
                 </div>
-                <div class="main-restaurants__all-rest__rest-all-card rest-all-card">
+                <div class="resto-all__r-card-all">
                     <!--Card 1-->
-                    <article class="rest-all-card__rest-card rest-card">
-                        <a class="rest-all-card__rest-card__rest-card-link rest-card-link" href="#">
-                            <div class="rest-card-link__rest-picture-block rest-picture-block">
-                                <span class="rest-card-link__rest-picture-block__new-rest new-rest">Nouveau</span>
-                                <img class="rest-card-link__rest-picture-block__picture-rest picture-rest" src="../Assets/Images/Images et textes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
+                    <article class="resto-all__r-card-all__r-card r-card">
+                        <a class="r-card__r-card-link" href="#">
+                            <div class="r-card__r-card-link__r-picture r-picture">
+                                <span class="r-picture__r-new">Nouveau</span>
+                                <img class="r-picture__r-only-picture" src="../Assets/Images/Images et textes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
                             </div>
-                            <div class="rest-card-link__rest-descr rest-descr">
-                                <div class="rest-card-link__rest-descr__rest-title rest-title">
+                            <div class="r-card__r-card-link__r-txt r-txt">
+                                <div class="r-txt__r-name">
                                     <h3>La palette du goût</h3>
                                 </div>
-                                <div class="rest-card-link__rest-descr__rest-geoloc rest-geoloc">
-                                    <span class="rest-geoloc__rest-geoloc-txt rest-geoloc-txt">Ménilmontant</span>
+                                <div class="r-txt__r-geoloc">
+                                    <span class="r-txt__r-geoloc__r-where">Ménilmontant</span>
                                 </div>
                             </div>
                         </a>
-                        <div class="rest-all-card__rest-card__rest-like rest-like">
-                            <i class="rest-like__like-fa fa-regular fa-heart"></i>
+                        <div class="r-card__r-like">
+                            <i class="r-card__r-like__resto-likefa fa-regular fa-heart"></i>
                         </div>
                     </article>
                     <!--Card 2-->
-                    <article class="rest-all-card__rest-card rest-card">
-                        <a class="rest-all-card__rest-card__rest-card-link rest-card-link" href="#">
-                            <div class="rest-card-link__rest-picture-block rest-picture-block">
-                                <span class="rest-card-link__rest-picture-block__new-rest new-rest">Nouveau</span>
-                                <img class="rest-card-link__rest-picture-block__picture-rest picture-rest" src="../Assets/Images/Images et textes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="">
+                    <article class="resto-all__r-card-all__r-card r-card">
+                        <a class="r-card__r-card-link" href="#">
+                            <div class="r-card__r-card-link__r-picture r-picture">
+                                <span class="r-picture__r-new">Nouveau</span>
+                                <img class="r-picture__r-only-picture" src="../Assets/Images/Images et textes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="">
                             </div>
-                            <div class="rest-card-link__rest-descr rest-descr">
-                                <div class="rest-card-link__rest-descr__rest-title rest-title">
+                            <div class="r-card__r-card-link__r-txt r-txt">
+                                <div class="r-txt__r-name">
                                     <h3>La note enchantée</h3>
                                 </div>
-                                <div class="rest-card-link__rest-descr__rest-geoloc rest-geoloc">
-                                    <span class="rest-geoloc__rest-geoloc-txt rest-geoloc-txt">Charonne</span>
+                                <div class="r-txt__r-geoloc">
+                                    <span class="r-txt__r-geoloc__r-where">Charonne</span>
                                 </div>
                             </div>
                         </a>
-                        <div class="rest-all-card__rest-card__rest-like rest-like">
-                            <i class="rest-like__like-fa fa-regular fa-heart"></i>
+                        <div class="r-card__r-like">
+                            <i class="r-card__r-like__resto-likefa fa-regular fa-heart"></i>
                         </div>
                     </article>
                     <!--Card 3-->
-                    <article class="rest-all-card__rest-card rest-card">
-                        <a class="rest-all-card__rest-card__rest-card-link rest-card-link" href="#">
-                            <div class="rest-card-link__rest-picture-block rest-picture-block">
-                                <img class="rest-card-link__rest-picture-block__picture-rest picture-rest" src="../Assets/Images/Images et textes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
+                    <article class="resto-all__r-card-all__r-card r-card">
+                        <a class="r-card__r-card-link" href="#">
+                            <div class="r-card__r-card-link__r-picture r-picture">
+                                <img class="r-picture__r-only-picture" src="../Assets/Images/Images et textes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
                             </div>
-                            <div class="rest-card-link__rest-descr rest-descr">
-                                <div class="rest-card-link__rest-descr__rest-title rest-title">
+                            <div class="r-card__r-card-link__r-txt r-txt">
+                                <div class="r-txt__r-name">
                                     <h3>À la française</h3>
                                 </div>
-                                <div class="rest-card-link__rest-descr__rest-geoloc rest-geoloc">
-                                    <span class="rest-geoloc__rest-geoloc-txt rest-geoloc-txt">Cité Rouge</span>
+                                <div class="r-txt__r-geoloc">
+                                    <span class="r-txt__r-geoloc__r-where">Cité Rouge</span>
                                 </div>
                             </div>
                         </a>
-                        <div class="rest-all-card__rest-card__rest-like rest-like">
-                            <i class="rest-like__like-fa fa-regular fa-heart"></i>
+                        <div class="r-card__r-like">
+                            <i class="r-card__r-like__resto-likefa fa-regular fa-heart"></i>
                         </div>
                     </article>
                     <!--Card 4-->
-                    <article class="rest-all-card__rest-card rest-card">
-                        <a class="rest-all-card__rest-card__rest-card-link rest-card-link" href="#">
-                            <div class="rest-card-link__rest-picture-block rest-picture-block">
-                                <img class="rest-card-link__rest-picture-block__picture-rest picture-rest" src="../Assets/Images/Images et textes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="">
+                    <article class="resto-all__r-card-all__r-card r-card">
+                        <a class="r-card__r-card-link" href="#">
+                            <div class="r-card__r-card-link__r-picture r-picture">
+                                <img class="r-picture__r-only-picture" src="../Assets/Images/Images et textes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="">
                             </div>
-                            <div class="rest-card-link__rest-descr rest-descr">
-                                <div class="rest-card-link__rest-descr__rest-title rest-title">
+                            <div class="r-card__r-card-link__r-txt r-txt">
+                                <div class="r-txt__r-name">
                                     <h3>Le délice des sens</h3>
                                 </div>
-                                <div class="rest-card-link__rest-descr__rest-geoloc rest-geoloc">
-                                    <span class="rest-geoloc__rest-geoloc-txt rest-geoloc-txt">Folie-Méricourt</span>
+                                <div class="r-txt__r-geoloc">
+                                    <span class="r-txt__r-geoloc__r-where">Folie-Méricourt</span>
                                 </div>
                             </div>
                         </a>
-                        <div class="rest-all-card__rest-card__rest-like rest-like">
-                            <i class="rest-like__like-fa fa-regular fa-heart"></i>
+                        <div class="r-card__r-like">
+                            <i class="r-card__r-like__resto-likefa fa-regular fa-heart"></i>
                         </div>
                     </article>
                 </div>
@@ -161,15 +161,15 @@
         </section>
     </main>
     <!--FOOTER-->
-    <footer class="downpage">
-        <div class="downpage__omf-title omf-title">
+    <footer id="below" class="foot-site">
+        <div class="foot-site__foot-title">
             <h3>ohmyfood</h3>
         </div>
-        <nav class="downpage__down-nav down-nav">
-            <a href="#" class="downpage__down-nav__down-link down-link"><i class="downpage__down-nav__fa-down fa-solid fa-utensils"></i>Proposer un restaurant</a>
-            <a href="#" class="downpage__down-nav__down-link down-link"><i class="downpage__down-nav__fa-down fa-solid fa-handshake-angle"></i>Devenir partenaire</a>
-            <a href="#" class="downpage__down-nav__down-link down-link">Mentions légales</a>
-            <a href="#" class="downpage__down-nav__down-link down-link">Contact</a>
+        <nav class="foot-site__foot-nav">
+            <a href="#" class="foot-site__foot-nav__foot-link"><i class="foot-site__foot-nav__footfa fa-solid fa-utensils"></i>Proposer un restaurant</a>
+            <a href="#" class="foot-site__foot-nav__foot-link"><i class="foot-site__foot-nav__footfa fa-solid fa-handshake-angle"></i>Devenir partenaire</a>
+            <a href="#" class="foot-site__foot-nav__foot-link">Mentions légales</a>
+            <a href="#" class="foot-site__foot-nav__foot-link">Contact</a>
         </nav>
     </footer>
 </body>
