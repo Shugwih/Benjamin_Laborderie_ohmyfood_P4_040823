@@ -7,6 +7,7 @@
 /**F6F6F6 light grey for background**/
 /**#353535 dark grey for font**/
 /**#FFFFFF white for font**/
+/**#7E7E7E light grey for font**/
 /**Gradient for btn**/
 /**Mixin For SCSS**/
 /**ALL**/
@@ -51,7 +52,9 @@ a:active {
   display: flex;
   justify-content: center;
 }
-.top-site__top-geolocation {
+
+/**Hero**/
+.hero__hero-geolocation {
   background-color: #EAEAEA;
   font-weight: 500;
   display: flex;
@@ -61,8 +64,6 @@ a:active {
   padding: 1rem 0 1rem 0;
   color: #353535;
 }
-
-/**Hero**/
 .hero__hero-all {
   text-align: center;
   background-color: #F6F6F6;
@@ -91,22 +92,19 @@ a:active {
 /**Guide**/
 .guide__g-container__g-title h2 {
   margin: 0;
-  padding: 3rem 5rem 1.62rem 1.25rem;
+  padding: 3rem 5rem 0 1.25rem;
 }
 .guide__g-container__g-all-step {
   display: flex;
-  flex-direction: column;
-  margin: auto;
-  padding: 0;
-  gap: 1.56rem;
+  flex-flow: row wrap;
+  margin: 0 0 4.25rem 0;
 }
 
 .g-all-step__g-step {
-  border: 1px solid red;
   border-radius: 1.25rem;
   padding: 1rem 0;
-  align-items: center;
-  margin: 0 2.03rem 0 1.25rem;
+  margin: 1.56rem 1.25rem 0 2.03rem;
+  width: 20.15538rem;
   background-color: #F6F6F6;
   font-weight: 500;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
@@ -123,6 +121,17 @@ a:active {
   color: #FFFFFF;
   font-size: 0.88638rem;
   font-weight: 500;
+  position: relative;
+  right: 14px;
+}
+.g-all-step__g-step__g-step-txt {
+  padding: 0 1rem 0 1rem;
+}
+.g-all-step__g-step__stepfa {
+  color: #7E7E7E;
+}
+.g-all-step__g-step__stepfa.fa-solid.fa-store {
+  color: #9356DC;
 }
 
 /*# sourceMappingURL=style.css.map */
