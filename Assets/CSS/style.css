@@ -5,20 +5,35 @@
 /**#99E2D0 light green for some style details**/
 /**EAEAEA grey for background**/
 /**F6F6F6 light grey for background**/
+/**#FFFFFF white for background**/
 /**#353535 dark grey for font**/
 /**#FFFFFF white for font**/
 /**#7E7E7E light grey for font**/
+/**#7E7E7E green for font**/
 /**Gradient for btn**/
+/**Gradient for like icon**/
 /**Mixin For SCSS**/
 /**ALL**/
 body {
   margin: auto;
 }
 
-/**
-ul {
-    list-style-type: none;
-}**/
+h1 {
+  margin: 0; /**For all title h1 to 6**/
+}
+
+h2 {
+  margin: 0; /**For all title h1 to 6**/
+}
+
+h3 {
+  margin: 0; /**For all title h1 to 6**/
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
 }
@@ -91,7 +106,6 @@ a:active {
 
 /**Guide**/
 .guide__g-container__g-title h2 {
-  margin: 0;
   padding: 3rem 5rem 0 1.25rem;
 }
 .guide__g-container__g-all-step {
@@ -132,6 +146,80 @@ a:active {
 }
 .g-all-step__g-step__stepfa.fa-solid.fa-store {
   color: #9356DC;
+}
+
+/**Restaurants**/
+.resto-all {
+  position: relative;
+  background-color: #F6F6F6;
+  padding-bottom: 4.13rem;
+}
+.resto-all__resto-title h2 {
+  padding: 3rem 5rem 1.5rem 1.25rem;
+}
+.resto-all__r-card-all {
+  display: grid;
+  grid-gap: 1.25rem;
+}
+
+.r-card {
+  position: relative;
+  margin: 0 1.12rem 0 1.06rem;
+  background-color: #FFFFFF;
+  border-radius: 0.94rem;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+}
+.r-card:hover {
+  cursor: pointer;
+}
+.r-card__r-card-link__r-picture img {
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+}
+.r-card__r-like {
+  position: absolute;
+  right: 1.56rem;
+  bottom: 2.06rem;
+}
+
+.like-button > .fa-solid {
+  display: none;
+}
+.like-button:hover > .fa-solid {
+  display: initial;
+  background: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.like-button:hover > .fa-regular {
+  display: none;
+}
+
+.like-button { /**%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%**/
+  border: none;
+  background-color: transparent;
+}
+
+.r-picture__r-new {
+  position: absolute;
+  right: 1rem;
+  margin-top: 1rem;
+  background-color: #99E2D0;
+  color: #008766;
+  padding: 0.44rem 0.6rem 0.37rem 0.56rem;
+  border-radius: 0.13rem;
+}
+.r-picture__r-only-picture {
+  border-radius: 0.94rem 0.94rem 0 0;
+}
+
+.r-txt__r-name {
+  padding: 0.5rem 3.75rem 0.31rem 0.81rem;
+}
+.r-txt__r-geoloc {
+  padding: 0 5rem 0.75rem 0.81rem;
 }
 
 /*# sourceMappingURL=style.css.map */
