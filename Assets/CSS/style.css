@@ -3,16 +3,19 @@
 /**#9356DC primary purple**/
 /**#FF79DA secondary purple for gradient**/
 /**#99E2D0 light green for some style details**/
+/**#353535 dark grey for background**/
 /**EAEAEA grey for background**/
 /**F6F6F6 light grey for background**/
 /**#FFFFFF white for background**/
 /**#353535 dark grey for font**/
 /**#FFFFFF white for font**/
 /**#7E7E7E light grey for font**/
-/**#7E7E7E green for font**/
+/**#008766 green for font**/
 /**Gradient for btn**/
 /**Gradient for like icon**/
+/**Gradient for footer link**/
 /**Mixin For SCSS**/
+/**Mixin Animation**/
 /**ALL**/
 body {
   margin: auto;
@@ -33,6 +36,18 @@ h3 {
 button:hover {
   cursor: pointer;
 }
+button.generic-btn {
+  background: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%);
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 1.5625rem;
+  padding: 0 1.5rem;
+  height: 3.125rem;
+  margin-top: 1rem;
+  border: none;
+}
 
 a {
   text-decoration: none;
@@ -42,6 +57,9 @@ a:visited {
 }
 a:active {
   color: inherit;
+}
+a:hover {
+  cursor: pointer;
 }
 
 .main-restaurants img {
@@ -89,19 +107,6 @@ a:active {
 }
 .hero__hero-all__hero-description {
   color: #353535;
-}
-
-.hero-all__hero-btn-container--generic-btn {
-  background: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%);
-  color: #FFFFFF;
-  font-size: 1rem;
-  font-weight: 500;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 1.5625rem;
-  padding: 0 1.5rem;
-  height: 3.125rem;
-  margin-top: 1rem;
-  border: none;
 }
 
 /**Guide**/
@@ -169,9 +174,6 @@ a:active {
   border-radius: 0.94rem;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
 }
-.r-card:hover {
-  cursor: pointer;
-}
 .r-card__r-card-link__r-picture img {
   width: 100%;
   height: 10rem;
@@ -183,6 +185,10 @@ a:active {
   bottom: 2.06rem;
 }
 
+.like-button {
+  border: none;
+  background-color: transparent;
+}
 .like-button > .fa-solid {
   display: none;
 }
@@ -195,11 +201,6 @@ a:active {
 }
 .like-button:hover > .fa-regular {
   display: none;
-}
-
-.like-button { /**%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%**/
-  border: none;
-  background-color: transparent;
 }
 
 .r-picture__r-new {
@@ -220,6 +221,55 @@ a:active {
 }
 .r-txt__r-geoloc {
   padding: 0 5rem 0.75rem 0.81rem;
+}
+
+/**FOOTER**/
+.foot-site {
+  background: #353535;
+  color: #FFFFFF;
+  padding: 1.38rem 1.56rem;
+}
+.foot-site__foot-title h3 {
+  font-family: Shrikhand;
+  padding-bottom: 1rem;
+}
+.foot-site__foot-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.44rem;
+  font-weight: 500;
+}
+.foot-site__foot-nav__foot-link i {
+  width: 1.3rem;
+  margin-right: 0.69rem;
+}
+.foot-site__foot-nav__foot-link {
+  /**For footer**/
+  width: fit-content; /**For underline**/
+  background: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%);
+  background-clip: text; /**For webkit-clip**/
+  background-size: 200% 100%; /**white font**/
+  background-position: -100%; /**White font before grad**/
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.foot-site__foot-nav__foot-link::before { /**Underline**/
+  content: "";
+  background: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%);
+  display: block;
+  position: absolute;
+  bottom: -0.188rem; /**Underline pos**/
+  width: 0; /**Animation spawn**/
+  height: 0.188rem; /**Underline thickness**/
+  transition: all 0.3s ease-in-out;
+}
+.foot-site__foot-nav__foot-link:hover {
+  background-position: 0;
+}
+.foot-site__foot-nav__foot-link:hover::before {
+  width: 100%; /**Animation underline 0 to 100**/
 }
 
 /*# sourceMappingURL=style.css.map */

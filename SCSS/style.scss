@@ -12,15 +12,18 @@ $black-weight: 900;
 $main-color: #9356DC; /**#9356DC primary purple**/
 $secondary-color: #FF79DA; /**#FF79DA secondary purple for gradient**/
 $tertiary-color: #99E2D0; /**#99E2D0 light green for some style details**/
+$dark-background: #353535; /**#353535 dark grey for background**/
 $background: #EAEAEA; /**EAEAEA grey for background**/
 $light-background: #F6F6F6; /**F6F6F6 light grey for background**/
 $extra-light-background: #FFFFFF; /**#FFFFFF white for background**/
 $option1-font-color: #353535; /**#353535 dark grey for font**/
 $option2-font-color: #FFFFFF; /**#FFFFFF white for font**/
 $option3-font-color: #7E7E7E; /**#7E7E7E light grey for font**/
-$option4-font-color: #008766; /**#7E7E7E green for font**/
+$option4-font-color: #008766; /**#008766 green for font**/
 $gradient-color: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%); /**Gradient for btn**/
 $gradient-color2: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%); /**Gradient for like icon**/
+$gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient for footer link**/
+
 /**Mixin For SCSS**/
 @mixin section-shadow {
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
@@ -43,6 +46,36 @@ $gradient-color2: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%); /**Gradient
     border: none;
 }
 
+/**Mixin Animation**/
+
+@mixin link-animation { /**For footer**/
+    width: fit-content; /**For underline**/
+    background: $gradient-color3;
+    background-clip: text; /**For webkit-clip**/
+    background-size: 200% 100%; /**white font**/
+    background-position: -100%; /**White font before grad**/
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    &::before { /**Underline**/
+    content: "";
+    background: $gradient-color;
+    display: block;
+    position: absolute;
+    bottom: -0.188rem; /**Underline pos**/
+    width: 0; /**Animation spawn**/
+    height: 0.188rem; /**Underline thickness**/
+    transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+    background-position: 0;
+    }
+    &:hover::before {
+    width: 100%; /**Animation underline 0 to 100**/
+    }    
+}
+
 /**ALL**/
 
 body {
@@ -59,6 +92,9 @@ button {
     &:hover {
         cursor: pointer;
     }
+    &.generic-btn {
+        @include generic-btn-style;
+    }
 }
 
 a {
@@ -68,6 +104,9 @@ a {
     }
     &:active {
         color: inherit;
+    }
+    &:hover {
+        cursor: pointer;
     }
 }
 
@@ -118,14 +157,6 @@ a {
         }
         &__hero-description {
             color: $option1-font-color;
-        }
-    }
-}
-
-.hero-all {
-    &__hero-btn-container {
-        &--generic-btn {
-            @include generic-btn-style;
         }
     }
 }
@@ -202,9 +233,6 @@ a {
     background-color: $extra-light-background;
     border-radius: 0.94rem;
     @include card-shadow;
-    &:hover {
-        cursor: pointer;
-    }
     &__r-card-link {
         &__r-picture img {
             width: 100%;
@@ -220,6 +248,8 @@ a {
         }
 
 .like-button {
+    border: none;
+    background-color: transparent;
     > .fa-solid {
         display: none;
     }
@@ -235,11 +265,6 @@ a {
             display: none;
         }
     }
-}
-
-.like-button { /**%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%**/
-    border: none;
-    background-color: transparent;
 }
 
 .r-picture {
@@ -263,5 +288,30 @@ a {
     }
     &__r-geoloc {
         padding: 0 5rem 0.75rem 0.81rem;
+    }
+}
+
+/**FOOTER**/
+
+.foot-site {
+    background: $dark-background;
+    color: $option2-font-color;
+    padding: 1.38rem 1.56rem;
+    &__foot-title h3 {
+        font-family: $title_logo-font;
+        padding-bottom: 1rem;
+    }
+    &__foot-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.44rem;
+        font-weight: $medium-weight;
+        &__foot-link i {
+            width: 1.3rem;
+            margin-right: 0.69rem;
+        }
+        &__foot-link {
+            @include link-animation;
+        }
     }
 }
