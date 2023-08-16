@@ -4,22 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La palette du goùt - Ohmyfood</title>
-    <link href="../CSS/style.css" rel="stylesheet">
+    <title>La palette du goût - Ohmyfood</title>
+    <link href="../../Assets/CSS/style.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/172a535d2d.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Shrikhand&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-
+    <header id="hat" class="top-site">
+        <div class="top-site__top-logo">
+            <img src="../../Assets/Images/Images_et_textes_Ohmyfood/images/logo/ohmyfoodresize.svg" alt="Logo">
+        </div>
     </header>
-    <main>
-
+    <main id="master-container" class="master-restaurant-menu">
+        <!--SECTION H1 // Hero-->
+        <section id="hero-rm" class="r-menu__r-m-hero r-m-hero">
+            <div class="r-m-hero__r-m-picture r-m-picture">
+                <img src="../../Assets/Images/Images_et_textes_Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
+            </div>
+        </section>
+        <section id="restaurant-main-menu" class="restaurant-menu">
+            <div class="r-menu-container">
+                <div class="r-menu-container__title-container title-container">
+                    <h2 class=>La palette du goût</h2>
+                    <button class="like-button">
+                        <i class="r-card__r-like__resto-likefa fa-regular fa-heart fa-xl"></i>
+                        <i class="r-card__r-like__resto-likefa fa-solid fa-heart fa-xl"></i>
+                    </button>
+                </div>
+                <article class="r-menu-container__full-resto-menu full-resto-menu">
+                    <div class="full-resto-menu__title-resto-menu title-resto-menu">
+                        <h3>ENTRÉE</h3>
+                    </div>
+                    <div class="full-resto-menu__all-r-option all-r-option">
+                        <div class="all-r-option__resto-option resto-option">
+                            <h4 class="all-r-option__resto-option__r-option-name r-option-name">Fricassée d'escargots</h4>
+                            <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Au piment d'Espelette</span>
+                            <span class="all-r-option__resto-option__r-option-price r-option-price">25€</span>
+                        </div>
+                    </div>
+                    <div class="full-resto-menu__all-r-option all-r-option">
+                        <div class="all-r-option__resto-option resto-option">
+                            <h4 class="all-r-option__resto-option__r-option-name r-option-name">Foie gras de canard mi-cuit</h4>
+                            <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Et ses copeaux de truffe noire</span>
+                            <span class="all-r-option__resto-option__r-option-price r-option-price">35€</span>
+                        </div>
+                    </div>
+                    <div class="full-resto-menu__all-r-option all-r-option">
+                        <div class="all-r-option__resto-option resto-option">
+                            <h4 class="all-r-option__resto-option__r-option-name r-option-name">Œuf au plat</h4>
+                            <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Assaisonné à la truffe sur lit de caviar</span>
+                            <span class="all-r-option__resto-option__r-option-price r-option-price">20€</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="r-menu-container__full-resto-menu full-resto-menu">
+                    <div class="full-resto-menu__title-resto-menu title-resto-menu">
+                        <h3>PLATS</h3>
+                    </div>
+                    <div class="full-resto-menu__all-r-option all-r-option">
+                        <div class="all-r-option__resto-option resto-option">
+                            <h4 class="all-r-option__resto-option__r-option-name r-option-name">Filet de bœuf aux herbes</h4>
+                            <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Accompagné de sa ribambelle de légumes</span>
+                            <span class="all-r-option__resto-option__r-option-price r-option-price">40€</span>
+                        </div>
+                    </div>
+                    <div class="full-resto-menu__all-r-option all-r-option">
+                        <div class="all-r-option__resto-option resto-option">
+                            <h4 class="all-r-option__resto-option__r-option-name r-option-name">Parmentier de queue de bœuf</h4>
+                            <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">À la truffe noire sur sa purée de panais</span>
+                            <span class="all-r-option__resto-option__r-option-price r-option-price">35€</span>
+                        </div>
+                    </div>
+                    <div class="full-resto-menu__all-r-option all-r-option">
+                        <div class="all-r-option__resto-option resto-option">
+                            <h4 class="all-r-option__resto-option__r-option-name r-option-name">Filet de turbot</h4>
+                            <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Aux agrumes</span>
+                            <span class="all-r-option__resto-option__r-option-price r-option-price">44€</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="r-menu-container__full-resto-menu full-resto-menu">
+                    <div class="full-resto-menu__title-resto-menu title-resto-menu">
+                        <h3>DESSERTS</h3>
+                    </div>
+                    <div class="full-resto-menu__all-r-option all-r-option">
+                        <div class="all-r-option__resto-option resto-option">
+                            <h4 class="all-r-option__resto-option__r-option-name r-option-name">Paris-Brest</h4>
+                            <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Revisité</span>
+                            <span class="all-r-option__resto-option__r-option-price r-option-price">18€</span>
+                        </div>
+                    </div>
+                    <div class="full-resto-menu__all-r-option all-r-option">
+                        <div class="all-r-option__resto-option resto-option">
+                            <h4 class="all-r-option__resto-option__r-option-name r-option-name">Macaron au chocolat d'exception</h4>
+                            <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Et glace à la vanille de Madagascar</span>
+                            <span class="all-r-option__resto-option__r-option-price r-option-price">22€</span>
+                        </div>
+                    </div>
+                    <div class="full-resto-menu__all-r-option all-r-option">
+                        <div class="all-r-option__resto-option resto-option">
+                            <h4 class="all-r-option__resto-option__r-option-name r-option-name">Mousse au chocolat</h4>
+                            <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Au piment d'Espelette et à la truffe noire</span>
+                            <span class="all-r-option__resto-option__r-option-price r-option-price">23€</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="restaurant-menu__menu-btn-container">
+                <button class="restaurant-menu__menu-btn-containe--generic-btn generic-btn resto-btn">
+                   Commander
+                </button>
+            </div>
+        </section>
     </main>
-    <footer>
-
+    <!--FOOTER-->
+    <footer id="below" class="foot-site">
+        <div class="foot-site__foot-title">
+            <h3>ohmyfood</h3>
+        </div>
+        <nav class="foot-site__foot-nav">
+            <a href="#" class="foot-site__foot-nav__foot-link f-link-1"><i class="foot-site__foot-nav__footfa footfa fa-solid fa-utensils"></i>Proposer un restaurant</a>
+            <a href="#" class="foot-site__foot-nav__foot-link f-link-2"><i class="foot-site__foot-nav__footfa footfa fa-solid fa-handshake-angle"></i>Devenir partenaire</a>
+            <a href="#" class="foot-site__foot-nav__foot-link f-link-3">Mentions légales</a>
+            <a href="mailto:contact@ohmyfood.com" class="foot-site__foot-nav__foot-link f-link-4">Contact</a>
+        </nav>
     </footer>
 </body>
 </html>

@@ -1,3 +1,36 @@
+/**Font-weight For SCSS**/
+/**Color For SCSS**/
+/**#9356DC primary purple**/
+/**#FF79DA secondary purple for gradient**/
+/**#99E2D0 light green for some style details**/
+/**#353535 dark grey for background**/
+/**EAEAEA grey for background**/
+/**F6F6F6 light grey for background**/
+/**#FFFFFF white for background**/
+/**#353535 dark grey for font**/
+/**#FFFFFF white for font**/
+/**#7E7E7E light grey for font**/
+/**#008766 green for font**/
+/**Gradient for btn**/
+/**Gradient for like icon**/
+/**Gradient for footer link**/
+/**Mixin For SCSS**/
+/**Mixin Animation**/
+/**Hero**/
+.r-m-hero__r-m-picture img {
+  width: 100%;
+  height: 13.1875rem;
+  object-fit: cover;
+}
 
+/**Menu Container**/
+.r-menu-container__title-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.r-menu-container__title-container h2 {
+  font-family: Shrikhand;
+}
 
 /*# sourceMappingURL=menu-style.css.map */

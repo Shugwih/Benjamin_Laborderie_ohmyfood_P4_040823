@@ -1,3 +1,8 @@
+/**Home-page**/
+@import url(home-style.css); /**Import style for home page**/
+/**Menu-page**/
+@import url(menu-style.css); /**Import style for menu page**/
+/**Font**/
 $title_logo-font: Shrikhand;
 $main-font: Roboto, sans-serif;
 
@@ -44,11 +49,16 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
     height: 3.125rem;
     margin-top: 1rem;
     border: none;
+    transition: all 0.3s ease-in-out; /**For mouse in - mouse out smooth animation delay**/
+    min-width: 11.625rem;
+    &:hover {
+        opacity: 0.85; /**lighten btn hover**/
+        box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
+    }
 }
 
 /**Mixin Animation**/
-
-@mixin link-animation { /**For footer**/
+@mixin link-animation { /**For footer link**/
     width: fit-content; /**For underline**/
     background: $gradient-color3;
     background-clip: text; /**For webkit-clip**/
@@ -61,7 +71,6 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
     &::before { /**Underline**/
     content: "";
     background: $gradient-color;
-    display: block;
     position: absolute;
     bottom: -0.188rem; /**Underline pos**/
     width: 0; /**Animation spawn**/
@@ -72,19 +81,24 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
     background-position: 0;
     }
     &:hover::before {
-    width: 100%; /**Animation underline 0 to 100**/
+    width: 50%; /**Animation underline 0 to 50**/
     }    
 }
 
 /**ALL**/
 
+* {
+    font-family: $main-font;
+    scroll-behavior: smooth;
+}
+
 body {
     margin: auto;
 }
 
-@for $i from 1 through 3 { 
+@for $i from 1 through 4 { 
     h#{$i} {
-        margin: 0; /**For all title h1 to 6**/
+        margin: 0; /**For all title h1 to 4**/
     }
 }
 
@@ -99,6 +113,7 @@ button {
 
 a {
     text-decoration: none;
+    color: inherit;
     &:visited {
         color: inherit;
     }
@@ -108,15 +123,6 @@ a {
     &:hover {
         cursor: pointer;
     }
-}
-
-.main-restaurants img {
-    display: none;
-}
-
-* {
-    font-family: $main-font;
-    /**box-sizing: border-box;**/
 }
 
 /**HEADER**/
@@ -132,162 +138,6 @@ a {
         width: 100%;
         display: flex;
         justify-content: center;
-    }
-}
-
-/**Hero**/
-
-.hero {
-    &__hero-geolocation {
-        background-color: $background;
-        font-weight: $medium-weight;
-        display: flex;
-        justify-content: center;
-        gap: 1.0625rem;
-        width: 100%;
-        padding: 1rem 0 1rem 0;
-        color: $option1-font-color;
-    }
-    &__hero-all {
-        text-align: center;
-        background-color: $light-background;
-        padding: 2rem;
-        &__hero-title h1 {
-            margin: 0 0 1rem 0;
-        }
-        &__hero-description {
-            color: $option1-font-color;
-        }
-    }
-}
-
-/**Guide**/
-
-.guide {
-    &__g-container {
-        &__g-title h2 {
-            padding: 3rem 5rem 0 1.25rem;
-        }
-        &__g-all-step {
-            display: flex;
-            flex-flow: row wrap;
-            margin: 0 0 4.25rem 0;
-        }
-    }
-}
-
-.g-all-step {
-    &__g-step {
-        border-radius: 1.25rem;
-        padding: 1rem 0;
-        margin: 1.56rem 1.25rem 0 2.03rem;
-        width: 20.15538rem;
-        background-color: $light-background;
-        font-weight: $medium-weight;
-        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-        &__g-number-order {
-            display: inline-flex;
-            border: 1px solid transparent;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            width: 1.5rem;
-            height: 1.5rem;
-            background-color: $main-color;
-            color: $option2-font-color;
-            font-size: 0.88638rem;
-            font-weight: $medium-weight;
-            position: relative;
-            right: 14px;
-        }
-        &__g-step-txt {
-            padding: 0 1rem 0 1rem;
-        }
-        &__stepfa {
-            color: $option3-font-color;
-        }
-        &__stepfa.fa-solid.fa-store {
-            color: $main-color;
-        }
-    }
-}
-
-/**Restaurants**/
-
-.resto-all {
-    position: relative;
-    background-color: $light-background;
-    padding-bottom: 4.13rem;
-    &__resto-title h2 {
-        padding: 3rem 5rem 1.5rem 1.25rem;
-    }
-    &__r-card-all {
-        display: grid;
-        grid-gap: 1.25rem;
-    }
-}
-
-.r-card {
-    position: relative;
-    margin: 0 1.12rem 0 1.06rem;
-    background-color: $extra-light-background;
-    border-radius: 0.94rem;
-    @include card-shadow;
-    &__r-card-link {
-        &__r-picture img {
-            width: 100%;
-            height: 10rem;
-            object-fit: cover;
-        }
-    }
-    &__r-like {
-        position: absolute;
-        right: 1.56rem;
-        bottom: 2.06rem;
-            }
-        }
-
-.like-button {
-    border: none;
-    background-color: transparent;
-    > .fa-solid {
-        display: none;
-    }
-    &:hover {
-        > .fa-solid {
-            display: initial;
-            background: $gradient-color2;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        > .fa-regular {
-            display: none;
-        }
-    }
-}
-
-.r-picture {
-    &__r-new {
-        position: absolute;
-        right: 1rem;
-        margin-top: 1rem;
-        background-color: $tertiary-color;
-        color: $option4-font-color;
-        padding: 0.44rem 0.6rem 0.37rem 0.56rem;
-        border-radius: 0.13rem;
-    }
-    &__r-only-picture {
-        border-radius: 0.94rem 0.94rem 0 0;
-    }
-}
-
-.r-txt {
-    &__r-name {
-        padding: 0.5rem 3.75rem 0.31rem 0.81rem;
-    }
-    &__r-geoloc {
-        padding: 0 5rem 0.75rem 0.81rem;
     }
 }
 

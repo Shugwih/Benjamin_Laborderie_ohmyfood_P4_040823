@@ -1,3 +1,160 @@
+/**Font-weight For SCSS**/
+/**Color For SCSS**/
+/**#9356DC primary purple**/
+/**#FF79DA secondary purple for gradient**/
+/**#99E2D0 light green for some style details**/
+/**#353535 dark grey for background**/
+/**EAEAEA grey for background**/
+/**F6F6F6 light grey for background**/
+/**#FFFFFF white for background**/
+/**#353535 dark grey for font**/
+/**#FFFFFF white for font**/
+/**#7E7E7E light grey for font**/
+/**#008766 green for font**/
+/**Gradient for btn**/
+/**Gradient for like icon**/
+/**Gradient for footer link**/
+/**Mixin For SCSS**/
+/**Mixin Animation**/
+/**Hero**/
+.hero__hero-geolocation {
+  background-color: #EAEAEA;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  gap: 1.0625rem;
+  width: 100%;
+  padding: 1rem 0 1rem 0;
+  color: #353535;
+}
+.hero__hero-all {
+  text-align: center;
+  background-color: #F6F6F6;
+  padding: 2rem;
+}
+.hero__hero-all__hero-title h1 {
+  margin: 0 0 1rem 0;
+}
+.hero__hero-all__hero-description {
+  color: #353535;
+}
 
+/**Guide**/
+.guide__g-container__g-title h2 {
+  padding: 3rem 5rem 0 1.25rem;
+}
+.guide__g-container__g-all-step {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 0 4.25rem 0;
+}
+
+.g-all-step__g-step {
+  border-radius: 1.25rem;
+  padding: 1rem 0;
+  margin: 1.56rem 1.25rem 0 2.03rem;
+  width: 20.15538rem;
+  background-color: #F6F6F6;
+  font-weight: 500;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+.g-all-step__g-step__g-number-order {
+  display: inline-flex;
+  border: 1px solid transparent;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #9356DC;
+  color: #FFFFFF;
+  font-size: 0.88638rem;
+  font-weight: 500;
+  position: relative;
+  right: 14px;
+}
+.g-all-step__g-step__g-step-txt {
+  padding: 0 0.9rem 0 0.81rem;
+}
+.g-all-step__g-step__stepfa {
+  color: #7E7E7E;
+}
+.g-all-step__g-step__stepfa.fa-solid.fa-store {
+  color: #9356DC;
+}
+
+/**Restaurants**/
+.resto-all {
+  position: relative;
+  background-color: #F6F6F6;
+  padding-bottom: 4.13rem;
+}
+.resto-all__resto-title h2 {
+  padding: 3rem 5rem 1.5rem 1.25rem;
+}
+.resto-all__r-card-all {
+  display: grid;
+  grid-gap: 1.25rem;
+}
+
+.r-card {
+  position: relative;
+  margin: 0 1.12rem 0 1.06rem;
+  background-color: #FFFFFF;
+  border-radius: 0.94rem;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out; /**scale delay**/
+}
+.r-card:hover {
+  transform: scale(1.02);
+}
+.r-card__r-card-link__r-picture img {
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+}
+.r-card__r-like {
+  position: absolute;
+  right: 1.56rem;
+  bottom: 2.06rem;
+}
+
+.like-button {
+  border: none;
+  background-color: transparent;
+}
+.like-button > .fa-solid {
+  display: none;
+}
+.like-button:hover > .fa-solid {
+  display: initial;
+  background: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.like-button:hover > .fa-regular {
+  display: none;
+}
+
+.r-picture__r-new {
+  position: absolute;
+  right: 1rem;
+  margin-top: 1rem;
+  background-color: #99E2D0;
+  color: #008766;
+  padding: 0.44rem 0.6rem 0.37rem 0.56rem;
+  border-radius: 0.13rem;
+}
+.r-picture__r-only-picture {
+  border-radius: 0.94rem 0.94rem 0 0;
+}
+
+.r-txt__r-name {
+  padding: 0.5rem 3.75rem 0.31rem 0.81rem;
+}
+.r-txt__r-geoloc {
+  padding: 0 5rem 0.75rem 0.81rem;
+}
 
 /*# sourceMappingURL=home-style.css.map */

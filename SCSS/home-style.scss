@@ -1,6 +1,240 @@
 $title_logo-font: Shrikhand;
-$main-font: Roboto;
-$main-color: #9356DC;
-$secondary-color: #FF79DA;
-$tertiary-color: #99E2D0;
+$main-font: Roboto, sans-serif;
 
+/**Font-weight For SCSS**/
+$light-weight: 300;
+$normal-weight: 400;
+$medium-weight: 500;
+$bold-weight: 700;
+$black-weight: 900;
+
+/**Color For SCSS**/
+$main-color: #9356DC; /**#9356DC primary purple**/
+$secondary-color: #FF79DA; /**#FF79DA secondary purple for gradient**/
+$tertiary-color: #99E2D0; /**#99E2D0 light green for some style details**/
+$dark-background: #353535; /**#353535 dark grey for background**/
+$background: #EAEAEA; /**EAEAEA grey for background**/
+$light-background: #F6F6F6; /**F6F6F6 light grey for background**/
+$extra-light-background: #FFFFFF; /**#FFFFFF white for background**/
+$option1-font-color: #353535; /**#353535 dark grey for font**/
+$option2-font-color: #FFFFFF; /**#FFFFFF white for font**/
+$option3-font-color: #7E7E7E; /**#7E7E7E light grey for font**/
+$option4-font-color: #008766; /**#008766 green for font**/
+$gradient-color: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%); /**Gradient for btn**/
+$gradient-color2: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%); /**Gradient for like icon**/
+$gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient for footer link**/
+
+/**Mixin For SCSS**/
+@mixin section-shadow {
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+@mixin card-shadow {
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
+}
+
+@mixin generic-btn-style {
+    background: $gradient-color;
+    color: $option2-font-color;
+    font-size: 1rem;
+    font-weight: $medium-weight;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 1.5625rem;
+    padding: 0 1.5rem;
+    height: 3.125rem;
+    margin-top: 1rem;
+    border: none;
+    transition: all 0.3s ease-in-out; /**For mouse in - mouse out smooth animation delay**/
+    &:hover {
+        opacity: 0.85; /**lighten btn hover**/
+        box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/**Mixin Animation**/
+@mixin link-animation { /**For footer link**/
+    width: fit-content; /**For underline**/
+    background: $gradient-color3;
+    background-clip: text; /**For webkit-clip**/
+    background-size: 200% 100%; /**white font**/
+    background-position: -100%; /**White font before grad**/
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    &::before { /**Underline**/
+    content: "";
+    background: $gradient-color;
+    position: absolute;
+    bottom: -0.188rem; /**Underline pos**/
+    width: 0; /**Animation spawn**/
+    height: 0.188rem; /**Underline thickness**/
+    transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+    background-position: 0;
+    }
+    &:hover::before {
+    width: 50%; /**Animation underline 0 to 50**/
+    }    
+}
+
+/**Hero**/
+
+.hero {
+    &__hero-geolocation {
+        background-color: $background;
+        font-weight: $medium-weight;
+        display: flex;
+        justify-content: center;
+        gap: 1.0625rem;
+        width: 100%;
+        padding: 1rem 0 1rem 0;
+        color: $option1-font-color;
+    }
+    &__hero-all {
+        text-align: center;
+        background-color: $light-background;
+        padding: 2rem;
+        &__hero-title h1 {
+            margin: 0 0 1rem 0;
+        }
+        &__hero-description {
+            color: $option1-font-color;
+        }
+    }
+}
+
+/**Guide**/
+
+.guide {
+    &__g-container {
+        &__g-title h2 {
+            padding: 3rem 5rem 0 1.25rem;
+        }
+        &__g-all-step {
+            display: flex;
+            flex-flow: row wrap;
+            margin: 0 0 4.25rem 0;
+        }
+    }
+}
+
+.g-all-step {
+    &__g-step {
+        border-radius: 1.25rem;
+        padding: 1rem 0;
+        margin: 1.56rem 1.25rem 0 2.03rem;
+        width: 20.15538rem;
+        background-color: $light-background;
+        font-weight: $medium-weight;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+        &__g-number-order {
+            display: inline-flex;
+            border: 1px solid transparent;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: $main-color;
+            color: $option2-font-color;
+            font-size: 0.88638rem;
+            font-weight: $medium-weight;
+            position: relative;
+            right: 14px;
+        }
+        &__g-step-txt {
+            padding: 0 0.9rem 0 0.81rem;
+        }
+        &__stepfa {
+            color: $option3-font-color;
+        }
+        &__stepfa.fa-solid.fa-store {
+            color: $main-color;
+        }
+    }
+}
+
+/**Restaurants**/
+
+.resto-all {
+    position: relative;
+    background-color: $light-background;
+    padding-bottom: 4.13rem;
+    &__resto-title h2 {
+        padding: 3rem 5rem 1.5rem 1.25rem;
+    }
+    &__r-card-all {
+        display: grid;
+        grid-gap: 1.25rem;
+    }
+}
+
+.r-card {
+    position: relative;
+    margin: 0 1.12rem 0 1.06rem;
+    background-color: $extra-light-background;
+    border-radius: 0.94rem;
+    @include card-shadow;
+    transition: all 0.2s ease-in-out; /**scale delay**/
+    &:hover {
+        transform: scale(1.02);
+    }
+    &__r-card-link {
+        &__r-picture img {
+            width: 100%;
+            height: 10rem;
+            object-fit: cover;
+        }
+    }
+    &__r-like {
+        position: absolute;
+        right: 1.56rem;
+        bottom: 2.06rem;
+    }
+}
+
+.like-button {
+    border: none;
+    background-color: transparent;
+    > .fa-solid {
+        display: none;
+    }
+    &:hover {
+        > .fa-solid {
+            display: initial;
+            background: $gradient-color2;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        > .fa-regular {
+            display: none;
+        }
+    }
+}
+
+.r-picture {
+    &__r-new {
+        position: absolute;
+        right: 1rem;
+        margin-top: 1rem;
+        background-color: $tertiary-color;
+        color: $option4-font-color;
+        padding: 0.44rem 0.6rem 0.37rem 0.56rem;
+        border-radius: 0.13rem;
+    }
+    &__r-only-picture {
+        border-radius: 0.94rem 0.94rem 0 0;
+    }
+}
+
+.r-txt {
+    &__r-name {
+        padding: 0.5rem 3.75rem 0.31rem 0.81rem;
+    }
+    &__r-geoloc {
+        padding: 0 5rem 0.75rem 0.81rem;
+    }
+}
