@@ -15,22 +15,114 @@
 /**Gradient for like icon**/
 /**Gradient for footer link**/
 /**Mixin For SCSS**/
-/**Mixin Animation**/
+/**Header Back arrow**/
+@keyframes arrowbeat {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.25);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.25);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.25);
+  }
+}
+.btn-page-return {
+  color: #353535;
+  position: absolute;
+  left: 0.6rem;
+  top: 1.15rem;
+}
+.btn-page-return:hover {
+  animation: arrowbeat 3s ease-in-out infinite alternate;
+}
+
 /**Hero**/
+.r-m-hero {
+  height: 10rem;
+}
 .r-m-hero__r-m-picture img {
   width: 100%;
   height: 13.1875rem;
   object-fit: cover;
+  position: relative;
+  z-index: -1;
 }
 
 /**Menu Container**/
+.r-menu-container {
+  padding-top: 2rem;
+}
 .r-menu-container__title-container {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  justify-content: space-between;
 }
 .r-menu-container__title-container h2 {
   font-family: Shrikhand;
+}
+
+/**Menu**/
+.restaurant-menu {
+  background: #F6F6F6;
+  border-radius: 0.94rem 0.94rem 0 0;
+  padding: 0 0.75rem;
+}
+.restaurant-menu__menu-btn-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.full-resto-menu {
+  margin: 2.5rem 0;
+}
+.full-resto-menu__title-resto-menu {
+  padding-bottom: 1.2rem;
+  width: fit-content;
+}
+.full-resto-menu__title-resto-menu::after { /**Underline**/
+  content: "";
+  background: #99E2D0;
+  position: absolute;
+  margin-top: 0.3rem;
+  width: 45px;
+  height: 0.188rem; /**Underline thickness**/
+  transition: all 0.3s ease-in-out;
+}
+
+.all-r-option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 39.625rem;
+}
+.all-r-option__resto-option {
+  background: #FFFFFF;
+  border-radius: 0.94rem;
+  padding: 0.94rem;
+}
+.all-r-option__resto-option__r-option-name {
+  font-size: 1.125rem;
+}
+.all-r-option__resto-option__r-option-ingredient {
+  font-weight: 300;
+}
+.all-r-option__resto-option__r-option-price {
+  font-weight: 700;
+}
+.all-r-option__resto-option__menu-sub-option {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.76rem;
 }
 
 /*# sourceMappingURL=menu-style.css.map */

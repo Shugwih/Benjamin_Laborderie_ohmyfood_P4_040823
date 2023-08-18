@@ -1,5 +1,7 @@
 $title_logo-font: Shrikhand;
 $main-font: Roboto, sans-serif;
+$fontsize-menu-choice1: 1.125rem;
+$fontsize-menu-choice2: 0.76rem;
 
 /**Font-weight For SCSS**/
 $light-weight: 300;
@@ -42,7 +44,6 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
     border-radius: 1.5625rem;
     padding: 0 1.5rem;
     height: 3.125rem;
-    margin-top: 1rem;
     border: none;
     transition: all 0.3s ease-in-out; /**For mouse in - mouse out smooth animation delay**/
     &:hover {
@@ -51,52 +52,122 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
     }
 }
 
-/**Mixin Animation**/
-@mixin link-animation { /**For footer link**/
-    width: fit-content; /**For underline**/
-    background: $gradient-color3;
-    background-clip: text; /**For webkit-clip**/
-    background-size: 200% 100%; /**white font**/
-    background-position: -100%; /**White font before grad**/
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    &::before { /**Underline**/
-    content: "";
-    background: $gradient-color;
+/**Header Back arrow**/
+
+@keyframes arrowbeat {
+  0%
+  {
+    transform: scale( 1 );
+  }
+  20%
+  {
+    transform: scale( 1.25 );
+  }
+  40%
+  {
+    transform: scale( 1 );
+  }
+  60%
+  {
+    transform: scale( 1.25 );
+  }
+  80%
+  {
+    transform: scale( 1 );
+  }
+  100%
+  {
+    transform: scale( 1.25 );
+  }
+}
+
+.btn-page-return {
+    color: $option1-font-color;
     position: absolute;
-    bottom: -0.188rem; /**Underline pos**/
-    width: 0; /**Animation spawn**/
-    height: 0.188rem; /**Underline thickness**/
-    transition: all 0.3s ease-in-out;
-    }
+    left: 0.6rem;
+    top: 1.15rem;
     &:hover {
-    background-position: 0;
+        animation: arrowbeat 3s ease-in-out infinite alternate;
     }
-    &:hover::before {
-    width: 50%; /**Animation underline 0 to 50**/
-    }    
 }
 
 /**Hero**/
 
 .r-m-hero {
+    height: 10rem;
     &__r-m-picture img {
         width: 100%;
         height: 13.1875rem;
         object-fit: cover;
+        position: relative;
+        z-index: -1;
     }
 }
 
 /**Menu Container**/
 .r-menu-container {
+    padding-top: 2rem;
     &__title-container {
         display: flex;
-        justify-content: center;
-        gap: 2rem;
+        justify-content: space-between;
         & h2 {
             font-family: $title_logo-font;
+        }
+    }
+}
+
+/**Menu**/
+
+.restaurant-menu {
+    background: $light-background;
+    border-radius: 0.94rem 0.94rem 0 0;
+    padding: 0 0.75rem;
+    &__menu-btn-container {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 2rem;
+    }
+}
+
+.full-resto-menu {
+    margin: 2.5rem 0;
+    &__title-resto-menu {
+        padding-bottom: 1.2rem;
+        width: fit-content;
+        &::after { /**Underline**/
+            content: "";
+            background: $tertiary-color;
+            position: absolute; 
+            margin-top: 0.3rem;
+            width: 45px;
+            height: 0.188rem; /**Underline thickness**/
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}
+
+.all-r-option {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 39.625rem;
+    &__resto-option {
+        background: $extra-light-background;
+        border-radius: 0.94rem;
+        padding: 0.94rem;
+        &__r-option-name {
+            font-size: $fontsize-menu-choice1;
+        }
+        &__r-option-ingredient {
+            font-weight: $light-weight;
+        }
+        &__r-option-price {
+            font-weight: $bold-weight;
+        }
+        &__menu-sub-option {
+            display: flex;
+            justify-content: space-between;
+            font-size: $fontsize-menu-choice2;
         }
     }
 }

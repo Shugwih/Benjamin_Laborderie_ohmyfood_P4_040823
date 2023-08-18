@@ -47,7 +47,6 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
     border-radius: 1.5625rem;
     padding: 0 1.5rem;
     height: 3.125rem;
-    margin-top: 1rem;
     border: none;
     transition: all 0.3s ease-in-out; /**For mouse in - mouse out smooth animation delay**/
     min-width: 11.625rem;
@@ -103,6 +102,8 @@ body {
 }
 
 button {
+    border: none;
+    background-color: transparent;
     &:hover {
         cursor: pointer;
     }
@@ -138,6 +139,28 @@ a {
         width: 100%;
         display: flex;
         justify-content: center;
+    }
+}
+
+/**Like Heart**/ 
+
+.like-button {
+    border: none;
+    background-color: transparent;
+    > .fa-solid {
+        display: none;
+    }
+    &:hover {
+        > .fa-solid {
+            display: initial;
+            background: $gradient-color2;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        > .fa-regular {
+            display: none;
+        }
     }
 }
 

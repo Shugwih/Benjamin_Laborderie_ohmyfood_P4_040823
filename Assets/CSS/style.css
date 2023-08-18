@@ -47,6 +47,10 @@ h4 {
   margin: 0; /**For all title h1 to 4**/
 }
 
+button {
+  border: none;
+  background-color: transparent;
+}
 button:hover {
   cursor: pointer;
 }
@@ -59,7 +63,6 @@ button.generic-btn {
   border-radius: 1.5625rem;
   padding: 0 1.5rem;
   height: 3.125rem;
-  margin-top: 1rem;
   border: none;
   transition: all 0.3s ease-in-out; /**For mouse in - mouse out smooth animation delay**/
   min-width: 11.625rem;
@@ -96,6 +99,25 @@ a:hover {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+/**Like Heart**/
+.like-button {
+  border: none;
+  background-color: transparent;
+}
+.like-button > .fa-solid {
+  display: none;
+}
+.like-button:hover > .fa-solid {
+  display: initial;
+  background: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.like-button:hover > .fa-regular {
+  display: none;
 }
 
 /**FOOTER**/

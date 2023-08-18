@@ -195,25 +195,6 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
     }
 }
 
-.like-button {
-    border: none;
-    background-color: transparent;
-    > .fa-solid {
-        display: none;
-    }
-    &:hover {
-        > .fa-solid {
-            display: initial;
-            background: $gradient-color2;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        > .fa-regular {
-            display: none;
-        }
-    }
-}
 
 .r-picture {
     &__r-new {

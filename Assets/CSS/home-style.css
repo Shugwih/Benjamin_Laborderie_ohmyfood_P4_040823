@@ -119,24 +119,6 @@
   bottom: 2.06rem;
 }
 
-.like-button {
-  border: none;
-  background-color: transparent;
-}
-.like-button > .fa-solid {
-  display: none;
-}
-.like-button:hover > .fa-solid {
-  display: initial;
-  background: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.like-button:hover > .fa-regular {
-  display: none;
-}
-
 .r-picture__r-new {
   position: absolute;
   right: 1rem;
