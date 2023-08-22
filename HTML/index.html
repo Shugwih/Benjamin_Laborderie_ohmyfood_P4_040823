@@ -13,7 +13,17 @@
 </head>
 <body>
     <div class="loader">
-        <!--TODO: FOR THE LOADER-->
+        <div class="loader__container-loader">
+            <div class="loader__container-loader__loader-item  prime-item">
+
+            </div>
+            <div class="loader__container-loader__loader-item secondary-item">
+
+            </div>
+            <div class="loader__container-loader__loader-item core-item">
+
+            </div>
+        </div>
     </div>
     <!--HEADER-->
     <header id="hat" class="top-site">
@@ -31,16 +41,18 @@
                 <span class="hero__hero-geolocation__geo-txt">Paris, Belleville</span>
             </div>
             <div class="hero__hero-all hero-all">
-                <div class="hero-all__hero-title">
+                <div class="hero__hero-all__hero-title">
                     <h1>Réserver le menu qui vous convient</h1>
                 </div>
-                <div class="hero-all__hero-description">
+                <div class="hero__hero-all__hero-description">
                     <span class="hero-all__hero-description__hero-txt">Découvrez des restaurants d'exception, sélectionnés par nos soins</span>
                 </div>
                 <div class="hero-all__hero-btn-container">
-                    <button onclick="location.href='#restaurant';" class="hero-all__hero-btn-container--generic-btn generic-btn hero-btn">
+                    <a href="#restaurant" class="hero-btn-link-resto">
+                    <button class="hero-all__hero-btn-container--generic-btn generic-btn hero-btn">
                        Explorer nos restaurants
                     </button>
+                    </a>
                 </div>
             </div>
         </section>

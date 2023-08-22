@@ -102,24 +102,95 @@ a:hover {
 }
 
 /**Like Heart**/
+/**
+
+.like-button i {
+    position: absolute;
+}
+
+.fa-solid {
+    opacity: 0;
+    transition: all 1.2s ease-out;
+    &:hover {
+        opacity: 1;
+        background: $gradient-color2;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}**/
+/**
 .like-button {
-  border: none;
-  background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    > .fa-solid {
+        display: none;
+    }
+    &:hover {
+        > .fa-solid {
+            display: initial;
+            background: $gradient-color2;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        > .fa-regular {
+            display: none;
+        }
+    }
 }
-.like-button > .fa-solid {
-  display: none;
+**/
+@keyframes like {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-.like-button:hover > .fa-solid {
-  display: initial;
+.like-button i {
+  position: absolute;
+  top: 4px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.like-button .fa-solid {
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+.like-button .fa-solid:hover {
+  opacity: 1;
   background: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.like-button:hover > .fa-regular {
-  display: none;
-}
 
+/**
+.like-button {
+    & i {
+        position: absolute;
+    }
+    & .fa-solid {
+        opacity: 0;
+        height: 100%;
+        &:hover {
+            background: $gradient-color2;
+            animation: like 0.3s both;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    & .fa-regular {
+        opacity: 1;
+        height: 100%;
+        &:hover {
+            opacity: 0;
+        }
+    }
+}
+**/
 /**FOOTER**/
 .foot-site {
   background: #353535;

@@ -1,5 +1,7 @@
 $title_logo-font: Shrikhand;
 $main-font: Roboto, sans-serif;
+$fontsize-resto-name: 1.75rem;
+$fontsize-category: 1rem;
 $fontsize-menu-choice1: 1.125rem;
 $fontsize-menu-choice2: 0.76rem;
 
@@ -86,8 +88,9 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
     position: absolute;
     left: 0.6rem;
     top: 1.15rem;
+    transition: transform 3s ease-in-out;
     &:hover {
-        animation: arrowbeat 3s ease-in-out infinite alternate;
+        animation: arrowbeat 3s ease-in-out;
     }
 }
 
@@ -107,21 +110,33 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
 /**Menu Container**/
 .r-menu-container {
     padding-top: 2rem;
-    &__title-container {
+    &__title-container { /**like+h1**/
         display: flex;
-        justify-content: space-between;
-        & h2 {
+        justify-content: center;
+        gap: 1.03rem;
+        & h1 {
             font-family: $title_logo-font;
+            font-size: $fontsize-resto-name;
         }
     }
+}
+
+.like-btn-menu-page { /**Like btn position**/
+    position: relative;
+    display: flex;
+    bottom: 0.1rem;
+    align-items: center;
+    padding: 0 1.2rem 0 0;
 }
 
 /**Menu**/
 
 .restaurant-menu {
     background: $light-background;
-    border-radius: 0.94rem 0.94rem 0 0;
+    border-radius: 2.5rem 2.5rem 0 0;
     padding: 0 0.75rem;
+    max-width: 1055px;
+    margin: auto;
     &__menu-btn-container {
         display: flex;
         justify-content: center;
@@ -134,6 +149,10 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
     &__title-resto-menu {
         padding-bottom: 1.2rem;
         width: fit-content;
+        & h2 {
+            font-size: $fontsize-category;
+            font-weight: $normal-weight;
+        }
         &::after { /**Underline**/
             content: "";
             background: $tertiary-color;

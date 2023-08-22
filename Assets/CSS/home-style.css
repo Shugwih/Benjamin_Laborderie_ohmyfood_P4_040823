@@ -16,6 +16,114 @@
 /**Gradient for footer link**/
 /**Mixin For SCSS**/
 /**Mixin Animation**/
+/**Loader**/
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.25);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+@keyframes coreanim {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+    border-radius: 50%;
+  }
+  10% {
+    opacity: 0.75;
+    border-radius: 0%;
+  }
+  50% {
+    transform: scale(1.24);
+    opacity: 0.5;
+    border-radius: 50%;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+@keyframes loading-end {
+  0% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.98;
+  }
+  97% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+.loader {
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  padding: 25vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #EAEAEA;
+  animation: loading-end 3s 0s ease-out both;
+}
+.loader__container-loader {
+  height: 50%;
+}
+.loader .prime-item {
+  border-top: 1rem solid #9356DC;
+  border-right: 1rem solid transparent;
+  border-bottom: 1rem solid #9356DC;
+  border-left: 1rem solid transparent;
+  border-radius: 50%;
+  position: relative;
+  top: 4rem;
+  height: 10rem;
+  width: 10rem;
+  animation: rotate 3s ease-in-out infinite;
+}
+.loader .prime-item:hover {
+  animation-play-state: paused;
+}
+.loader .secondary-item {
+  border-top: 0.5rem solid transparent;
+  border-right: 0.5rem solid #99E2D0;
+  border-bottom: 0.5rem dashed #99E2D0;
+  border-left: 0.5rem solid #99E2D0;
+  border-radius: 50%;
+  position: relative;
+  bottom: 7rem;
+  left: 1rem;
+  height: 9rem;
+  width: 9rem;
+  animation: rotate 3s ease-in-out infinite reverse;
+}
+.loader .secondary-item:hover {
+  animation-play-state: paused;
+}
+.loader .core-item {
+  border: 0.5rem solid #9356DC;
+  border-radius: 50%;
+  position: relative;
+  bottom: 16.5rem;
+  left: 1.5rem;
+  height: 8rem;
+  width: 8rem;
+  animation: coreanim 3s ease-in-out infinite;
+}
+
 /**Hero**/
 .hero__hero-geolocation {
   background-color: #EAEAEA;
@@ -30,12 +138,10 @@
 .hero__hero-all {
   text-align: center;
   background-color: #F6F6F6;
-  padding: 2rem;
-}
-.hero__hero-all__hero-title h1 {
-  margin: 0 0 1rem 0;
+  padding: 1.3rem;
 }
 .hero__hero-all__hero-description {
+  margin: 1.688rem 0;
   color: #353535;
 }
 

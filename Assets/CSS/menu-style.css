@@ -41,9 +41,10 @@
   position: absolute;
   left: 0.6rem;
   top: 1.15rem;
+  transition: transform 3s ease-in-out;
 }
 .btn-page-return:hover {
-  animation: arrowbeat 3s ease-in-out infinite alternate;
+  animation: arrowbeat 3s ease-in-out;
 }
 
 /**Hero**/
@@ -62,19 +63,31 @@
 .r-menu-container {
   padding-top: 2rem;
 }
-.r-menu-container__title-container {
+.r-menu-container__title-container { /**like+h1**/
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1.03rem;
 }
-.r-menu-container__title-container h2 {
+.r-menu-container__title-container h1 {
   font-family: Shrikhand;
+  font-size: 1.75rem;
+}
+
+.like-btn-menu-page { /**Like btn position**/
+  position: relative;
+  display: flex;
+  bottom: 0.1rem;
+  align-items: center;
+  padding: 0 1.2rem 0 0;
 }
 
 /**Menu**/
 .restaurant-menu {
   background: #F6F6F6;
-  border-radius: 0.94rem 0.94rem 0 0;
+  border-radius: 2.5rem 2.5rem 0 0;
   padding: 0 0.75rem;
+  max-width: 1055px;
+  margin: auto;
 }
 .restaurant-menu__menu-btn-container {
   display: flex;
@@ -88,6 +101,10 @@
 .full-resto-menu__title-resto-menu {
   padding-bottom: 1.2rem;
   width: fit-content;
+}
+.full-resto-menu__title-resto-menu h2 {
+  font-size: 1rem;
+  font-weight: 400;
 }
 .full-resto-menu__title-resto-menu::after { /**Underline**/
   content: "";

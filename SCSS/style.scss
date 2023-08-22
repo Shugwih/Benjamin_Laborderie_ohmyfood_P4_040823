@@ -143,10 +143,26 @@ a {
 }
 
 /**Like Heart**/ 
+/**
 
+.like-button i {
+    position: absolute;
+}
+
+.fa-solid {
+    opacity: 0;
+    transition: all 1.2s ease-out;
+    &:hover {
+        opacity: 1;
+        background: $gradient-color2;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}**/
+/**
 .like-button {
-    border: none;
-    background-color: transparent;
+    transition: all 0.3s ease-in-out;
     > .fa-solid {
         display: none;
     }
@@ -163,7 +179,63 @@ a {
         }
     }
 }
+**/
 
+@keyframes like {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.like-button {
+    & i {
+        position: absolute;
+        top: 4px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    & .fa-solid {
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+        &:hover {
+            opacity: 1;
+            background: $gradient-color2;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
+
+/**
+.like-button {
+    & i {
+        position: absolute;
+    }
+    & .fa-solid {
+        opacity: 0;
+        height: 100%;
+        &:hover {
+            background: $gradient-color2;
+            animation: like 0.3s both;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    & .fa-regular {
+        opacity: 1;
+        height: 100%;
+        &:hover {
+            opacity: 0;
+        }
+    }
+}
+**/
 /**FOOTER**/
 
 .foot-site {
