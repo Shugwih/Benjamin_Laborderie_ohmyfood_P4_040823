@@ -1,3 +1,5 @@
+/**For h1 large device**/
+/**For hero-decription large device**/
 /**Font-weight For SCSS**/
 /**Color For SCSS**/
 /**#9356DC primary purple**/
@@ -14,6 +16,10 @@
 /**Gradient for btn**/
 /**Gradient for like icon**/
 /**Gradient for footer link**/
+/**Media breakpoint**/
+/**Laptops min / Desktops min**/
+/**Tablets min**/
+/**Tablets max**/
 /**Mixin For SCSS**/
 /**Mixin Animation**/
 /**Loader**/
@@ -114,13 +120,13 @@
   animation-play-state: paused;
 }
 .loader .core-item {
-  border: 0.5rem solid #9356DC;
+  border: 0.3rem solid #9356DC;
   border-radius: 50%;
   position: relative;
   bottom: 16.5rem;
   left: 1.5rem;
-  height: 8rem;
-  width: 8rem;
+  height: 8.5rem;
+  width: 8.5rem;
   animation: coreanim 3s ease-in-out infinite;
 }
 
@@ -140,19 +146,57 @@
   background-color: #F6F6F6;
   padding: 1.3rem;
 }
+@media (min-width: 1025px) {
+  .hero__hero-all__hero-title h1 {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 767.8px) and (max-width: 1024px) {
+  .hero__hero-all__hero-title h1 {
+    font-size: 2rem;
+  }
+}
 .hero__hero-all__hero-description {
   margin: 1.688rem 0;
   color: #353535;
 }
+@media (min-width: 1025px) {
+  .hero__hero-all__hero-description {
+    font-size: 1.125rem;
+  }
+}
 
 /**Guide**/
+@media (min-width: 767.8px) {
+  .guide {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 767.8px) {
+  .guide__g-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .guide__g-container__g-title h2 {
   padding: 3rem 5rem 0 1.25rem;
+}
+@media (min-width: 1025px) {
+  .guide__g-container__g-title h2 {
+    padding-left: 0;
+  }
 }
 .guide__g-container__g-all-step {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   margin: 0 0 4.25rem 0;
+}
+@media (min-width: 1025px) {
+  .guide__g-container__g-all-step {
+    flex-flow: row nowrap;
+  }
 }
 
 .g-all-step__g-step {
@@ -163,6 +207,11 @@
   background-color: #F6F6F6;
   font-weight: 500;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+@media (min-width: 1025px) {
+  .g-all-step__g-step {
+    width: 18.15538rem;
+  }
 }
 .g-all-step__g-step__g-number-order {
   display: inline-flex;
@@ -190,10 +239,27 @@
 }
 
 /**Restaurants**/
+.restaurant {
+  background-color: #F6F6F6;
+}
+@media (min-width: 1025px) {
+  .restaurant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .resto-all {
   position: relative;
-  background-color: #F6F6F6;
   padding-bottom: 4.13rem;
+}
+@media (min-width: 1025px) {
+  .resto-all__resto-title {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
 }
 .resto-all__resto-title h2 {
   padding: 3rem 5rem 1.5rem 1.25rem;
@@ -201,6 +267,17 @@
 .resto-all__r-card-all {
   display: grid;
   grid-gap: 1.25rem;
+}
+@media (min-width: 767.8px) {
+  .resto-all__r-card-all {
+    grid-template-columns: minmax(475px, auto) 1fr;
+  }
+}
+@media (min-width: 767.8px) and (max-width: 1024px) {
+  .resto-all__r-card-all {
+    margin: 0 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .r-card {
@@ -210,6 +287,16 @@
   border-radius: 0.94rem;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease-in-out; /**scale delay**/
+}
+@media (min-width: 1025px) {
+  .r-card {
+    width: 490px;
+  }
+}
+@media (min-width: 767.8px) and (max-width: 1024px) {
+  .r-card {
+    margin: 0;
+  }
 }
 .r-card:hover {
   transform: scale(1.02);

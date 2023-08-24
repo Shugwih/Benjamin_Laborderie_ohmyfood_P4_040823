@@ -14,6 +14,10 @@
 /**Gradient for btn**/
 /**Gradient for like icon**/
 /**Gradient for footer link**/
+/**Media breakpoint**/
+/**Laptops min / Desktops min**/
+/**Tablets min**/
+/**Tablets max**/
 /**Mixin For SCSS**/
 /**Header Back arrow**/
 @keyframes arrowbeat {
@@ -63,6 +67,13 @@
 .r-menu-container {
   padding-top: 2rem;
 }
+@media (min-width: 767.8px) {
+  .r-menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .r-menu-container__title-container { /**like+h1**/
   display: flex;
   justify-content: center;
@@ -96,7 +107,12 @@
 }
 
 .full-resto-menu {
-  margin: 2.5rem 0;
+  margin: 1.25rem 0;
+}
+@media (min-width: 767.8px) {
+  .full-resto-menu {
+    width: 634px;
+  }
 }
 .full-resto-menu__title-resto-menu {
   padding-bottom: 1.2rem;
@@ -120,12 +136,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  max-width: 39.625rem;
 }
 .all-r-option__resto-option {
   background: #FFFFFF;
   border-radius: 0.94rem;
   padding: 0.94rem;
+  position: relative;
 }
 .all-r-option__resto-option__r-option-name {
   font-size: 1.125rem;
@@ -136,10 +152,49 @@
 .all-r-option__resto-option__r-option-price {
   font-weight: 700;
 }
-.all-r-option__resto-option__menu-sub-option {
+.all-r-option__resto-option__menu-sub-option { /**Price + ingredient**/
   display: flex;
   justify-content: space-between;
-  font-size: 0.76rem;
+  font-size: 0.8rem;
+}
+.all-r-option__resto-option__menu-sub-option span {
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0;
+  display: inline-block;
+}
+.all-r-option__resto-option:hover {
+  cursor: pointer;
+}
+.all-r-option__resto-option:hover ~ .wrap-container {
+  visibility: visible;
+  transform: translate(-60px);
+}
+.all-r-option__resto-option:hover .r-option-price {
+  transform: translate(-60px);
+}
+
+/**Check wrap**/
+.flex-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 0;
+}
+
+.wrap-container {
+  width: 3.688rem;
+  height: 4.191rem;
+  background: #99E2D0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0.94rem 0.94rem 0;
+  visibility: collapse;
+  transform: translate(0);
+  transition: all 0.3s ease-in-out;
+}
+.wrap-container__wrap-icon {
+  color: #FFFFFF;
 }
 
 /*# sourceMappingURL=menu-style.css.map */

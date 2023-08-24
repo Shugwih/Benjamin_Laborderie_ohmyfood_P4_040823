@@ -1,5 +1,8 @@
 $title_logo-font: Shrikhand;
 $main-font: Roboto, sans-serif;
+$fontsize-hero-title-desktop: 2.5rem; /**For h1 large device**/
+$fontsize-hero-description: 1.125rem; /**For hero-decription large device**/
+$fontsize-hero-title-tablet: 2rem;
 
 /**Font-weight For SCSS**/
 $light-weight: 300;
@@ -23,6 +26,11 @@ $option4-font-color: #008766; /**#008766 green for font**/
 $gradient-color: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%); /**Gradient for btn**/
 $gradient-color2: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%); /**Gradient for like icon**/
 $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient for footer link**/
+
+/**Media breakpoint**/
+$large-device: 1025px; /**Laptops min / Desktops min**/
+$medium-device-min: 767.8px; /**Tablets min**/
+$medium-device-max: 1024px; /**Tablets max**/
 
 /**Mixin For SCSS**/
 @mixin section-shadow {
@@ -180,13 +188,13 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
         }
     }
     .core-item {
-        border: 0.5rem solid #9356DC;
+        border: 0.3rem solid $main-color;
         border-radius: 50%;
         position: relative;
         bottom: 16.5rem;
         left: 1.5rem;
-        height: 8rem;
-        width: 8rem;
+        height: 8.5rem;
+        width: 8.5rem;
         animation: coreanim 3s ease-in-out infinite;
     } 
 }
@@ -208,9 +216,20 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
         text-align: center;
         background-color: $light-background;
         padding: 1.3rem;
+        &__hero-title h1 {
+            @media (min-width: $large-device) {
+                font-size: $fontsize-hero-title-desktop;
+            }
+            @media (min-width: $medium-device-min) and (max-width: $medium-device-max) {
+                font-size: $fontsize-hero-title-tablet;
+            }
+        }
         &__hero-description{
             margin: 1.688rem 0;
             color: $option1-font-color;
+            @media (min-width: $large-device) {
+                font-size: $fontsize-hero-description;
+            }
         }
     }
 }
@@ -218,14 +237,29 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
 /**Guide**/
 
 .guide {
+    @media (min-width: $medium-device-min) {
+        display: flex;
+        justify-content: center;
+    }
     &__g-container {
+        @media (min-width: $medium-device-min) {
+            display: flex;
+            flex-direction: column;
+        }
         &__g-title h2 {
             padding: 3rem 5rem 0 1.25rem;
+            @media (min-width: $large-device) {
+                padding-left: 0;
+            }
         }
         &__g-all-step {
             display: flex;
             flex-flow: row wrap;
+            justify-content: center;
             margin: 0 0 4.25rem 0;
+            @media (min-width: $large-device) {
+                flex-flow: row nowrap;
+            }
         }
     }
 }
@@ -239,6 +273,9 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
         background-color: $light-background;
         font-weight: $medium-weight;
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+        @media (min-width: $large-device) {
+            width: 18.15538rem;
+        }
         &__g-number-order {
             display: inline-flex;
             border: 1px solid transparent;
@@ -268,16 +305,38 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
 
 /**Restaurants**/
 
+.restaurant {
+    background-color: $light-background;
+    @media (min-width: $large-device) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }   
+}
+
 .resto-all {
     position: relative;
-    background-color: $light-background;
     padding-bottom: 4.13rem;
-    &__resto-title h2 {
-        padding: 3rem 5rem 1.5rem 1.25rem;
+    &__resto-title {
+        @media (min-width: $large-device) {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+        }   
+        & h2 {
+            padding: 3rem 5rem 1.5rem 1.25rem;
+        }
     }
     &__r-card-all {
         display: grid;
         grid-gap: 1.25rem;
+        @media (min-width: $medium-device-min) {
+            grid-template-columns: minmax(475px, auto) 1fr;
+        }
+        @media (min-width: $medium-device-min) and (max-width: $medium-device-max) {
+            margin: 0 1rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 }
 
@@ -288,6 +347,12 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
     border-radius: 0.94rem;
     @include card-shadow;
     transition: all 0.2s ease-in-out; /**scale delay**/
+    @media (min-width: $large-device) {
+        width: 490px;
+    }
+    @media (min-width: $medium-device-min) and (max-width: $medium-device-max) {
+        margin: 0;
+    }
     &:hover {
         transform: scale(1.02);
     }

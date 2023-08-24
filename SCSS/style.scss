@@ -29,6 +29,12 @@ $gradient-color: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%); /**Gradient 
 $gradient-color2: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%); /**Gradient for like icon**/
 $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient for footer link**/
 
+/**Media breakpoint**/
+$extra-large-device: 1441px; /**HQ - Only use for footer now**/
+$large-device: 1025px; /**Laptops min / Desktops min**/
+$medium-device-min: 767.8px; /**Tablets min**/
+$medium-device-max: 1024px; /**Tablets max**/
+
 /**Mixin For SCSS**/
 @mixin section-shadow {
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
@@ -89,10 +95,14 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
 * {
     font-family: $main-font;
     scroll-behavior: smooth;
+    &::selection {
+        color: darken($tertiary-color, 10);
+    }
 }
 
-body {
+body, html {
     margin: auto;
+    overflow-x: hidden!important;
 }
 
 @for $i from 1 through 4 { 
@@ -139,6 +149,11 @@ a {
         width: 100%;
         display: flex;
         justify-content: center;
+        & img {
+            @media (min-width: $large-device) {
+                width: 12rem;
+            }
+        }
     }
 }
 
@@ -181,15 +196,6 @@ a {
 }
 **/
 
-@keyframes like {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 .like-button {
     & i {
         position: absolute;
@@ -199,14 +205,17 @@ a {
         align-items: center;
     }
     & .fa-solid {
-        transition: all 0.3s ease-in-out;
+        transition: opacity 0.3s ease-in-out;
+        background: $gradient-color2;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         opacity: 0;
         &:hover {
             opacity: 1;
-            background: $gradient-color2;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        }
+        &:hover .fa-regular {
+            opacity: 0;
         }
     }
 }
@@ -242,15 +251,44 @@ a {
     background: $dark-background;
     color: $option2-font-color;
     padding: 1.38rem 1.56rem;
+
+        @media (min-width: $large-device) {
+            display: flex;
+            flex-direction: row-reverse;
+        }
     &__foot-title h3 {
         font-family: $title_logo-font;
         padding-bottom: 1rem;
+
+        @media (min-width: $large-device) {
+            padding-bottom: 0.5rem;
+            margin-right: 2rem;
+        }    
     }
     &__foot-nav {
-        display: flex;
-        flex-direction: column;
-        gap: 0.44rem;
-        font-weight: $medium-weight;
+        @media (min-width: $large-device) {
+            gap: 3.5rem;
+            margin-right: 5rem;
+        }
+        > .group-link {
+            display: flex;
+            flex-direction: column;
+            gap: 0.44rem;
+            font-weight: $medium-weight;
+            @media (min-width: $large-device) {
+                flex-direction: row;
+            }
+        }
+        > .group-link-1 {
+            padding-bottom: 0.44rem;
+            @media (min-width: $large-device) {
+                padding-bottom: 0;
+            }
+        }
+            @media (min-width: $large-device) {
+                display: flex;
+                align-items: center;
+            }
         &__foot-link i {
             width: 1.3rem;
             margin-right: 0.69rem;

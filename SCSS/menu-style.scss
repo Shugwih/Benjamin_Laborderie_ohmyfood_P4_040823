@@ -3,7 +3,7 @@ $main-font: Roboto, sans-serif;
 $fontsize-resto-name: 1.75rem;
 $fontsize-category: 1rem;
 $fontsize-menu-choice1: 1.125rem;
-$fontsize-menu-choice2: 0.76rem;
+$fontsize-menu-choice2: 0.8rem;
 
 /**Font-weight For SCSS**/
 $light-weight: 300;
@@ -27,6 +27,11 @@ $option4-font-color: #008766; /**#008766 green for font**/
 $gradient-color: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%); /**Gradient for btn**/
 $gradient-color2: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%); /**Gradient for like icon**/
 $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient for footer link**/
+
+/**Media breakpoint**/
+$large-device: 1025px; /**Laptops min / Desktops min**/
+$medium-device-min: 767.8px; /**Tablets min**/
+$medium-device-max: 1024px; /**Tablets max**/
 
 /**Mixin For SCSS**/
 @mixin section-shadow {
@@ -57,30 +62,25 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
 /**Header Back arrow**/
 
 @keyframes arrowbeat {
-  0%
-  {
-    transform: scale( 1 );
-  }
-  20%
-  {
-    transform: scale( 1.25 );
-  }
-  40%
-  {
-    transform: scale( 1 );
-  }
-  60%
-  {
-    transform: scale( 1.25 );
-  }
-  80%
-  {
-    transform: scale( 1 );
-  }
-  100%
-  {
-    transform: scale( 1.25 );
-  }
+  
+    0% {
+        transform: scale( 1 );
+    }
+    20% {
+        transform: scale( 1.25 );
+    }
+    40% {
+        transform: scale( 1 );
+    }
+    60% {
+        transform: scale( 1.25 );
+    }
+    80% {
+        transform: scale( 1 );
+    }
+    100% {
+        transform: scale( 1.25 );
+    }
 }
 
 .btn-page-return {
@@ -110,6 +110,11 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
 /**Menu Container**/
 .r-menu-container {
     padding-top: 2rem;
+    @media (min-width: $medium-device-min) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     &__title-container { /**like+h1**/
         display: flex;
         justify-content: center;
@@ -145,7 +150,10 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
 }
 
 .full-resto-menu {
-    margin: 2.5rem 0;
+    margin: 1.25rem 0;
+    @media (min-width: $medium-device-min) {
+        width: 634px;
+    }
     &__title-resto-menu {
         padding-bottom: 1.2rem;
         width: fit-content;
@@ -169,11 +177,11 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    max-width: 39.625rem;
     &__resto-option {
         background: $extra-light-background;
         border-radius: 0.94rem;
         padding: 0.94rem;
+        position: relative;
         &__r-option-name {
             font-size: $fontsize-menu-choice1;
         }
@@ -183,10 +191,50 @@ $gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient
         &__r-option-price {
             font-weight: $bold-weight;
         }
-        &__menu-sub-option {
+        &__menu-sub-option { /**Price + ingredient**/
             display: flex;
             justify-content: space-between;
             font-size: $fontsize-menu-choice2;
+            & span {
+                overflow-x: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                min-width: 0;
+                display: inline-block;
+            }
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        &:hover ~ .wrap-container {
+            visibility: visible;
+            transform: translate(-60px);
+        }
+        &:hover .r-option-price {
+            transform: translate(-60px);
         }
     }
 }
+
+/**Check wrap**/
+
+.flex-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 0;
+}
+
+.wrap-container {
+        width: 3.688rem;
+        height: 4.191rem;
+        background: $tertiary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 0.94rem 0.94rem 0;
+        visibility: collapse;
+        transform: translate(0);
+        transition: all 0.3s ease-in-out;
+        &__wrap-icon {
+            color: $option2-font-color;
+        }
+    }
