@@ -53,15 +53,25 @@
 
 /**Hero**/
 .r-m-hero {
-  height: 10rem;
+  height: 12rem;
+}
+@media (min-width: 1025px) {
+  .r-m-hero {
+    height: 20rem;
+  }
 }
 .r-m-hero__r-m-picture img {
   width: 100%;
-  height: 13.1875rem;
+  height: 14.1875rem;
   object-fit: cover;
   position: relative;
   z-index: -1;
   object-position: 50% 60%;
+}
+@media (min-width: 1025px) {
+  .r-m-hero__r-m-picture img {
+    height: 23.938rem;
+  }
 }
 
 /**Menu Container**/
@@ -77,12 +87,12 @@
 }
 .r-menu-container__title-container { /**like+h1**/
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1.03rem;
 }
 .r-menu-container__title-container h1 {
   font-family: Shrikhand;
-  font-size: 1.75rem;
+  font-size: 1.598rem;
 }
 
 .like-btn-menu-page { /**Like btn position**/
@@ -100,6 +110,11 @@
   padding: 0 0.75rem;
   max-width: 1055px;
   margin: auto;
+}
+@media (min-width: 1025px) {
+  .restaurant-menu {
+    width: 80%;
+  }
 }
 .restaurant-menu__menu-btn-container {
   display: flex;
@@ -178,6 +193,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  white-space: nowrap;
 }
 .all-r-option__resto-option {
   background: #FFFFFF;
@@ -187,7 +203,7 @@
   transition: all 0.3s ease-in-out;
 }
 .all-r-option__resto-option__r-option-name {
-  font-size: 1.125rem;
+  font-size: 0.94rem;
 }
 .all-r-option__resto-option__r-option-ingredient {
   font-weight: 300;
@@ -199,24 +215,23 @@
 .all-r-option__resto-option__menu-sub-option { /**Price + ingredient**/
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem;
+  font-size: 0.77rem;
 }
 .all-r-option__resto-option:hover {
   cursor: pointer;
 }
 .all-r-option__resto-option:hover .r-option-name {
   overflow-x: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
   max-width: 80%;
   display: inline-block;
 }
 .all-r-option__resto-option:hover .r-option-ingredient {
   overflow-x: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
   max-width: 65%;
   display: inline-block;
+  transition: all 0.3s ease-in-out;
 }
 .all-r-option__resto-option:hover ~ .wrap-container {
   transform: translate(-60px);

@@ -5,21 +5,225 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À la française - Ohmyfood</title>
-    <link href="../CSS/style.css" rel="stylesheet">
+    <link href="../../Assets/CSS/style.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/172a535d2d.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Shrikhand&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-
+    <header id="hat" class="top-site">
+        <div class="top-site__top-logo">
+            <div class="btn-page-return"> <!--SVG Arrow return page home-->
+                <a href="../../index.html" class="bt-page-return-link"><i class="fa-solid fa-arrow-left fa-xl"></i></a>
+            </div>
+            <img src="../../Assets/Images/Images_et_textes_Ohmyfood/images/logo/ohmyfoodresize.svg" alt="Logo">
+        </div>
     </header>
-    <main>
-
+    <main id="master-container" class="master-restaurant-menu">
+        <!--SECTION H1 // Hero-->
+        <div class="r-menu__r-m-hero r-m-hero">
+            <div class="r-m-hero__r-m-picture r-m-picture">
+                <img src="../../Assets/Images/Images_et_textes_Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
+            </div>
+        </div>
+        <section id="restaurant-main-menu" class="restaurant-menu">
+            <div class="r-menu-container">
+                <div class="r-menu-container__title-container title-container">
+                    <h1>À la française</h1>
+                    <button class="like-button like-btn-menu-page">
+                        <i class="fa-regular fa-heart fa-xl"></i>
+                        <i class="fa-solid fa-heart fa-xl"></i>
+                    </button>
+                </div>
+                <article class="r-menu-container__full-resto-menu full-resto-menu f-r-m-entrance">
+                    <div class="full-resto-menu__title-resto-menu title-resto-menu">
+                        <h2>ENTRÉE</h2>
+                    </div>
+                    <div class="full-resto-menu__all-r-option all-r-option">
+                        <div class="flex-wrapper">
+                            <div class="all-r-option__resto-option resto-option">
+                                <div class="option-container">
+                                    <h4 class="all-r-option__resto-option__r-option-name r-option-name">Tartare de poulpe acidulé</h4>
+                                    <div class="all-r-option__resto-option__menu-sub-option">
+                                        <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Aux zestes d'orange</span>
+                                        <span class="all-r-option__resto-option__r-option-price r-option-price">25€</span>
+                                    </div>
+                                </div>  
+                            </div> 
+                            <div class="wrap-container">
+                                <div class="wrap-container__wrap-icon">
+                                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="flex-wrapper">
+                            <div class="all-r-option__resto-option resto-option">
+                                <div class="option-container">
+                                    <h4 class="all-r-option__resto-option__r-option-name r-option-name">Velouté de légumes d'antan</h4>
+                                    <div class="all-r-option__resto-option__menu-sub-option">
+                                        <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Carotte, panais, topinambour</span>
+                                        <span class="all-r-option__resto-option__r-option-price r-option-price">35€</span>
+                                    </div>
+                                </div>  
+                            </div> 
+                            <div class="wrap-container">
+                                <div class="wrap-container__wrap-icon">
+                                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-wrapper">
+                            <div class="all-r-option__resto-option resto-option">
+                                <div class="option-container">
+                                    <h4 class="all-r-option__resto-option__r-option-name r-option-name">Soupe à l'oignon</h4>
+                                    <div class="all-r-option__resto-option__menu-sub-option">
+                                        <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Revisitée</span>
+                                        <span class="all-r-option__resto-option__r-option-price r-option-price">20€</span>
+                                    </div>
+                                </div>  
+                            </div> 
+                            <div class="wrap-container">
+                                <div class="wrap-container__wrap-icon">
+                                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="r-menu-container__full-resto-menu full-resto-menu f-r-m-main">
+                    <div class="full-resto-menu__title-resto-menu title-resto-menu">
+                        <h2>PLATS</h2>
+                    </div>
+                    <div class="full-resto-menu__all-r-option all-r-option">
+                        <div class="flex-wrapper">
+                            <div class="all-r-option__resto-option resto-option">
+                                <div class="option-container">
+                                    <h4 class="all-r-option__resto-option__r-option-name r-option-name">Coquilles Saint-Jacques</h4>
+                                    <div class="all-r-option__resto-option__menu-sub-option">
+                                        <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Accompagné d'une purée de panais</span>
+                                        <span class="all-r-option__resto-option__r-option-price r-option-price">40€</span>
+                                    </div>
+                                </div>  
+                            </div> 
+                            <div class="wrap-container">
+                                <div class="wrap-container__wrap-icon">
+                                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-wrapper">
+                            <div class="all-r-option__resto-option resto-option">
+                                <div class="option-container">
+                                    <h4 class="all-r-option__resto-option__r-option-name r-option-name">Magret de canard</h4>
+                                    <div class="all-r-option__resto-option__menu-sub-option">
+                                        <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Et parmentier de pommes de terre</span>
+                                        <span class="all-r-option__resto-option__r-option-price r-option-price">35€</span>
+                                    </div>
+                                </div>  
+                            </div> 
+                            <div class="wrap-container">
+                                <div class="wrap-container__wrap-icon">
+                                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-wrapper">
+                            <div class="all-r-option__resto-option resto-option">
+                                <div class="option-container">
+                                    <h4 class="all-r-option__resto-option__r-option-name r-option-name">Pigeonneau d'Ille-et-Vilaine</h4>
+                                    <div class="all-r-option__resto-option__menu-sub-option">
+                                        <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Sur son lit de gnocchis aux légumes</span>
+                                        <span class="all-r-option__resto-option__r-option-price r-option-price">44€</span>
+                                    </div>
+                                </div>  
+                            </div> 
+                            <div class="wrap-container">
+                                <div class="wrap-container__wrap-icon">
+                                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="r-menu-container__full-resto-menu full-resto-menu f-r-m-dessert">
+                    <div class="full-resto-menu__title-resto-menu title-resto-menu">
+                        <h2>DESSERTS</h2>
+                    </div>
+                    <div class="full-resto-menu__all-r-option all-r-option">
+                        <div class="flex-wrapper">
+                            <div class="all-r-option__resto-option resto-option">
+                                <div class="option-container">
+                                    <h4 class="all-r-option__resto-option__r-option-name r-option-name">Pétales de violettes glacés</h4>
+                                    <div class="all-r-option__resto-option__menu-sub-option">
+                                        <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Et purée de noisettes</span>
+                                        <span class="all-r-option__resto-option__r-option-price r-option-price">18€</span>
+                                    </div>
+                                </div>  
+                            </div> 
+                            <div class="wrap-container">
+                                <div class="wrap-container__wrap-icon">
+                                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-wrapper">
+                            <div class="all-r-option__resto-option resto-option">
+                                <div class="option-container">
+                                    <h4 class="all-r-option__resto-option__r-option-name r-option-name">Fondant au chocolat</h4>
+                                    <div class="all-r-option__resto-option__menu-sub-option">
+                                        <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Revisité</span>
+                                        <span class="all-r-option__resto-option__r-option-price r-option-price">22€</span>
+                                    </div>
+                                </div>  
+                            </div> 
+                            <div class="wrap-container">
+                                <div class="wrap-container__wrap-icon">
+                                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-wrapper">
+                            <div class="all-r-option__resto-option resto-option">
+                                <div class="option-container">
+                                    <h4 class="all-r-option__resto-option__r-option-name r-option-name">Millefeuille croustillant</h4>
+                                    <div class="all-r-option__resto-option__menu-sub-option">
+                                        <span class="all-r-option__resto-option__r-option-ingredient r-option-ingredient">Myrtilles et pâte d'amande</span>
+                                        <span class="all-r-option__resto-option__r-option-price r-option-price">23€</span>
+                                    </div>
+                                </div>  
+                            </div> 
+                            <div class="wrap-container">
+                                <div class="wrap-container__wrap-icon">
+                                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="restaurant-menu__menu-btn-container">
+                <button class="restaurant-menu__menu-btn-containe--generic-btn generic-btn resto-btn">
+                   Commander
+                </button>
+            </div>
+        </section>
     </main>
-    <footer>
-
+    <!--FOOTER-->
+    <footer id="below" class="foot-site">
+        <div class="foot-site__foot-title">
+            <h3>ohmyfood</h3>
+        </div>
+        <nav class="foot-site__foot-nav">
+            <div class="group-link group-link-1">
+                <a href="#" class="foot-site__foot-nav__foot-link"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a>
+                <a href="#" class="foot-site__foot-nav__foot-link"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a>
+            </div>
+            <div class="group-link group-link-2">
+                <a href="#" class="foot-site__foot-nav__foot-link">Mentions légales</a>
+                <a href="mailto:contact@ohmyfood.com" class="foot-site__foot-nav__foot-link">Contact</a>
+            </div>
+        </nav>
     </footer>
 </body>
 </html>

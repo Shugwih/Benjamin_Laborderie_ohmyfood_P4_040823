@@ -4,10 +4,13 @@ Il est question de réalisé un site web "mobile first" pour la startup "Ohmyfoo
 respectant la chartre graphique d'une maquette et en rendant le tout responsive.
 
 Le site est versionné tout au long de son intégration sur la plateforme Github
-à l'adresse suivante : https://github.com/Shugwih/Benjamin_Laborderie_ohmyfood_P4_040823.git
+à l'adresse suivante : 
+
+- https://github.com/Shugwih/Benjamin_Laborderie_ohmyfood_P4_040823.git
 
 La version online du stie est disponible grâce à Github à l'adresse suivante :
 
+- https://shugwih.github.io/Benjamin_Laborderie_ohmyfood_P4_040823/
 
 Les contraintes techniques sont les suivantes :
 ● Le développement doit se faire en CSS avec Sass, sans JavaScript.

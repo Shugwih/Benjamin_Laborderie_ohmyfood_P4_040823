@@ -1,9 +1,9 @@
 $title_logo-font: Shrikhand;
 $main-font: Roboto, sans-serif;
-$fontsize-resto-name: 1.75rem;
+$fontsize-resto-name: 1.598rem;
 $fontsize-category: 1rem;
-$fontsize-menu-choice1: 1.125rem;
-$fontsize-menu-choice2: 0.8rem;
+$fontsize-menu-choice1: 0.94rem;
+$fontsize-menu-choice2: 0.77rem;
 
 /**Font-weight For SCSS**/
 $light-weight: 300;
@@ -97,14 +97,20 @@ $medium-device-max: 1024px; /**Tablets max**/
 /**Hero**/
 
 .r-m-hero {
-    height: 10rem;
+    height: 12rem;
+    @media (min-width: $large-device) {
+        height: 20rem;
+    }
     &__r-m-picture img {
         width: 100%;
-        height: 13.1875rem;
+        height: 14.1875rem;
         object-fit: cover;
         position: relative;
         z-index: -1;
         object-position: 50% 60%;
+        @media (min-width: $large-device) {
+            height: 23.938rem;
+        }
     }
 }
 
@@ -118,7 +124,7 @@ $medium-device-max: 1024px; /**Tablets max**/
     }
     &__title-container { /**like+h1**/
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         gap: 1.03rem;
         & h1 {
             font-family: $title_logo-font;
@@ -143,6 +149,9 @@ $medium-device-max: 1024px; /**Tablets max**/
     padding: 0 0.75rem;
     max-width: 1055px;
     margin: auto;
+    @media (min-width: $large-device) {
+        width: 80%;
+    }
     &__menu-btn-container {
         display: flex;
         justify-content: center;
@@ -221,6 +230,7 @@ $medium-device-max: 1024px; /**Tablets max**/
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    white-space: nowrap;
     &__resto-option {
         background: $extra-light-background;
         border-radius: 0.94rem;
@@ -247,17 +257,18 @@ $medium-device-max: 1024px; /**Tablets max**/
         }
         &:hover .r-option-name {
             overflow-x: hidden;
-            white-space: nowrap;
+            
             text-overflow: ellipsis;
             max-width: 80%;
             display: inline-block;
         }
         &:hover .r-option-ingredient {
             overflow-x: hidden;
-            white-space: nowrap;
+           
             text-overflow: ellipsis;
             max-width: 65%;
             display: inline-block;
+            transition: all 0.3s ease-in-out;
         }
         &:hover ~ .wrap-container {
             transform: translate(-60px);
