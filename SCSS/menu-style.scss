@@ -104,6 +104,7 @@ $medium-device-max: 1024px; /**Tablets max**/
         object-fit: cover;
         position: relative;
         z-index: -1;
+        object-position: 50% 60%;
     }
 }
 
@@ -149,7 +150,50 @@ $medium-device-max: 1024px; /**Tablets max**/
     }
 }
 
+@keyframes page-appear-ltr {
+    0% {
+        opacity: 0;
+        transform: translate(-100px);
+    }
+    50% {
+        opacity: 0;
+        transform: translate(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes page-appear-rtl {
+    0% {
+        opacity: 0;
+        transform: translate(100px);
+    }
+    50% {
+        opacity: 0;
+        transform: translate(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.f-r-m-entrance { /**For initial load menu**/
+    animation: page-appear-ltr 0.7s 0.3s ease-in-out both;
+}
+
+.f-r-m-main { /**For initial load menu**/
+    animation: page-appear-rtl 1s 0.3s ease-in-out both;
+}
+
+.f-r-m-dessert { /**For initial load menu**/
+    animation: page-appear-ltr 1.3s 0.3s ease-in-out both;
+}
+
 .full-resto-menu {
+    position: relative;
     margin: 1.25rem 0;
     @media (min-width: $medium-device-min) {
         width: 634px;
@@ -180,8 +224,9 @@ $medium-device-max: 1024px; /**Tablets max**/
     &__resto-option {
         background: $extra-light-background;
         border-radius: 0.94rem;
-        padding: 0.94rem;
+        padding: 0.81rem;
         position: relative;
+        transition: all 0.3s ease-in-out;
         &__r-option-name {
             font-size: $fontsize-menu-choice1;
         }
@@ -190,25 +235,33 @@ $medium-device-max: 1024px; /**Tablets max**/
         }
         &__r-option-price {
             font-weight: $bold-weight;
+            transition: all 0.3s ease-in-out;
         }
         &__menu-sub-option { /**Price + ingredient**/
             display: flex;
             justify-content: space-between;
             font-size: $fontsize-menu-choice2;
-            & span {
-                overflow-x: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                min-width: 0;
-                display: inline-block;
-            }
         }
         &:hover {
             cursor: pointer;
         }
+        &:hover .r-option-name {
+            overflow-x: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 80%;
+            display: inline-block;
+        }
+        &:hover .r-option-ingredient {
+            overflow-x: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 65%;
+            display: inline-block;
+        }
         &:hover ~ .wrap-container {
-            visibility: visible;
             transform: translate(-60px);
+            opacity: 1;
         }
         &:hover .r-option-price {
             transform: translate(-60px);
@@ -224,17 +277,17 @@ $medium-device-max: 1024px; /**Tablets max**/
 }
 
 .wrap-container {
-        width: 3.688rem;
-        height: 4.191rem;
-        background: $tertiary-color;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0 0.94rem 0.94rem 0;
-        visibility: collapse;
-        transform: translate(0);
-        transition: all 0.3s ease-in-out;
-        &__wrap-icon {
-            color: $option2-font-color;
-        }
+    width: 3.72rem;
+    height: 4.191rem;
+    background: $tertiary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0.94rem 0.94rem 0;
+    opacity: 0;
+    transform: translate(0);
+    transition: all 0.3s ease-in-out;
+    &__wrap-icon {
+        color: $option2-font-color;
     }
+}

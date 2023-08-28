@@ -153,6 +153,23 @@ a:hover {
     }
 }
 **/
+@keyframes like-opacity {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .like-button i {
   position: absolute;
   top: 4px;
@@ -170,9 +187,10 @@ a:hover {
 }
 .like-button .fa-solid:hover {
   opacity: 1;
+  transform: scale(1.1);
 }
-.like-button .fa-solid:hover .fa-regular {
-  opacity: 0;
+.like-button:hover .fa-regular {
+  animation: like-opacity 0.2s ease-in-out both;
 }
 
 /**

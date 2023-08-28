@@ -61,6 +61,7 @@
   object-fit: cover;
   position: relative;
   z-index: -1;
+  object-position: 50% 60%;
 }
 
 /**Menu Container**/
@@ -106,7 +107,48 @@
   padding-bottom: 2rem;
 }
 
+@keyframes page-appear-ltr {
+  0% {
+    opacity: 0;
+    transform: translate(-100px);
+  }
+  50% {
+    opacity: 0;
+    transform: translate(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes page-appear-rtl {
+  0% {
+    opacity: 0;
+    transform: translate(100px);
+  }
+  50% {
+    opacity: 0;
+    transform: translate(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+.f-r-m-entrance { /**For initial load menu**/
+  animation: page-appear-ltr 0.7s 0.3s ease-in-out both;
+}
+
+.f-r-m-main { /**For initial load menu**/
+  animation: page-appear-rtl 1s 0.3s ease-in-out both;
+}
+
+.f-r-m-dessert { /**For initial load menu**/
+  animation: page-appear-ltr 1.3s 0.3s ease-in-out both;
+}
+
 .full-resto-menu {
+  position: relative;
   margin: 1.25rem 0;
 }
 @media (min-width: 767.8px) {
@@ -140,8 +182,9 @@
 .all-r-option__resto-option {
   background: #FFFFFF;
   border-radius: 0.94rem;
-  padding: 0.94rem;
+  padding: 0.81rem;
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 .all-r-option__resto-option__r-option-name {
   font-size: 1.125rem;
@@ -151,25 +194,33 @@
 }
 .all-r-option__resto-option__r-option-price {
   font-weight: 700;
+  transition: all 0.3s ease-in-out;
 }
 .all-r-option__resto-option__menu-sub-option { /**Price + ingredient**/
   display: flex;
   justify-content: space-between;
   font-size: 0.8rem;
 }
-.all-r-option__resto-option__menu-sub-option span {
-  overflow-x: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  min-width: 0;
-  display: inline-block;
-}
 .all-r-option__resto-option:hover {
   cursor: pointer;
 }
+.all-r-option__resto-option:hover .r-option-name {
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 80%;
+  display: inline-block;
+}
+.all-r-option__resto-option:hover .r-option-ingredient {
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 65%;
+  display: inline-block;
+}
 .all-r-option__resto-option:hover ~ .wrap-container {
-  visibility: visible;
   transform: translate(-60px);
+  opacity: 1;
 }
 .all-r-option__resto-option:hover .r-option-price {
   transform: translate(-60px);
@@ -182,14 +233,14 @@
 }
 
 .wrap-container {
-  width: 3.688rem;
+  width: 3.72rem;
   height: 4.191rem;
   background: #99E2D0;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 0 0.94rem 0.94rem 0;
-  visibility: collapse;
+  opacity: 0;
   transform: translate(0);
   transition: all 0.3s ease-in-out;
 }
