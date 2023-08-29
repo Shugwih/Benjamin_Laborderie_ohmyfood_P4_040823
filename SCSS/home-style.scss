@@ -237,26 +237,34 @@ $medium-device-max: 1024px; /**Tablets max**/
 /**Guide**/
 
 .guide {
-    @media (min-width: $medium-device-min) {
+    @media (min-width: $large-device) {
         display: flex;
         justify-content: center;
     }
     &__g-container {
-        /**@media (min-width: $medium-device-min) {
+        @media (min-width: $large-device) {
             display: flex;
             flex-direction: column;
-        }**/
+            width: 1069px;
+        }
         &__g-title h2 {
             padding: 3rem 5rem 0 1.25rem;
             @media (min-width: $large-device) {
-                padding: 3rem 5rem 0 0.6rem;
+                padding: 3rem 5rem 0 1.1rem;
             }
         }
         &__g-all-step {
             margin: 0 0 4.25rem 0;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
+            /* display: flex; */
+            /* flex-flow: row wrap; */
+            /* justify-content: center; */
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 100%;
+            @media (min-width: $medium-device-min) {
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+                white-space: nowrap;
+            }
             @media (min-width: $large-device) {
                 display: grid;
                 grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
@@ -271,12 +279,14 @@ $medium-device-max: 1024px; /**Tablets max**/
         border-radius: 1.25rem;
         padding: 1rem 0;
         margin: 1.56rem 1.25rem 0 2.03rem;
-        width: 100%;
+        /**width: 100%;**/
         background-color: $light-background;
         font-weight: $medium-weight;
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
         @media (min-width: $medium-device-min) {
-            width: 20.16538rem;
+            /**width: 20.16538rem;**/
+            margin-left: 1.2rem;
+            min-width: 14.5rem;
         }
         @media (min-width: $large-device) {
             width: 18.16538rem;
@@ -295,6 +305,10 @@ $medium-device-max: 1024px; /**Tablets max**/
             font-weight: $medium-weight;
             position: relative;
             right: 14px;
+            @media (min-width: $medium-device-min) and (max-width: $medium-device-max) {
+                width: 1.1rem;
+                height: 1.1rem;
+            }
         }
         &__g-step-txt {
             padding: 0 0.9rem 0 0.81rem;
