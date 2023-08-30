@@ -208,6 +208,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     grid-gap: 0.5rem;
+    padding-left: 1rem;
   }
 }
 

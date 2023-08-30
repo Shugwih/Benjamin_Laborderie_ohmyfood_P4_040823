@@ -200,7 +200,10 @@
   border-radius: 0.94rem;
   padding: 0.81rem;
   position: relative;
-  transition: all 0.3s ease-in-out;
+}
+.all-r-option__resto-option > .option-container {
+  display: flex;
+  flex-direction: column;
 }
 .all-r-option__resto-option__r-option-name {
   font-size: 0.94rem;
@@ -210,11 +213,12 @@
 }
 .all-r-option__resto-option__r-option-price {
   font-weight: 700;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+  right: 1rem;
+  top: 1.95rem;
 }
-.all-r-option__resto-option__menu-sub-option { /**Price + ingredient**/
-  display: flex;
-  justify-content: space-between;
+.all-r-option__resto-option .menu-sub-option { /**Price + ingredient**/
   font-size: 0.77rem;
 }
 .all-r-option__resto-option:hover {
@@ -231,7 +235,6 @@
   text-overflow: ellipsis;
   max-width: 65%;
   display: inline-block;
-  transition: all 0.3s ease-in-out;
 }
 .all-r-option__resto-option:hover ~ .wrap-container {
   transform: translate(-60px);
@@ -257,7 +260,7 @@
   border-radius: 0 0.94rem 0.94rem 0;
   opacity: 0;
   transform: translate(0);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 .wrap-container__wrap-icon {
   color: #FFFFFF;

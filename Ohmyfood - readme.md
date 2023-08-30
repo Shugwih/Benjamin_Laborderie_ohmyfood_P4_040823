@@ -8,7 +8,7 @@ Le site est versionné tout au long de son intégration sur la plateforme Github
 
 - https://github.com/Shugwih/Benjamin_Laborderie_ohmyfood_P4_040823.git
 
-La version online du stie est disponible grâce à Github à l'adresse suivante :
+La version online du sitee est disponible grâce à Github à l'adresse suivante :
 
 - https://shugwih.github.io/Benjamin_Laborderie_ohmyfood_P4_040823/
 
