@@ -1,102 +1,16 @@
+@use './utilities'; /**Variables and mixin - Redundant rules**/
 /**Home-page**/
 @import url(home-style.css); /**Import style for home page**/
 /**Menu-page**/
 @import url(menu-style.css); /**Import style for menu page**/
-/**Font**/
-$title_logo-font: Shrikhand;
-$main-font: Roboto, sans-serif;
-
-/**Font-weight For SCSS**/
-$light-weight: 300;
-$normal-weight: 400;
-$medium-weight: 500;
-$bold-weight: 700;
-$black-weight: 900;
-
-/**Color For SCSS**/
-$main-color: #9356DC; /**#9356DC primary purple**/
-$secondary-color: #FF79DA; /**#FF79DA secondary purple for gradient**/
-$tertiary-color: #99E2D0; /**#99E2D0 light green for some style details**/
-$dark-background: #353535; /**#353535 dark grey for background**/
-$background: #EAEAEA; /**EAEAEA grey for background**/
-$light-background: #F6F6F6; /**F6F6F6 light grey for background**/
-$extra-light-background: #FFFFFF; /**#FFFFFF white for background**/
-$option1-font-color: #353535; /**#353535 dark grey for font**/
-$option2-font-color: #FFFFFF; /**#FFFFFF white for font**/
-$option3-font-color: #7E7E7E; /**#7E7E7E light grey for font**/
-$option4-font-color: #008766; /**#008766 green for font**/
-$gradient-color: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%); /**Gradient for btn**/
-$gradient-color2: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%); /**Gradient for like icon**/
-$gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient for footer link**/
-
-/**Media breakpoint**/
-$extra-large-device: 1441px; /**HQ - Only use for footer now**/
-$large-device: 1025px; /**Laptops min / Desktops min**/
-$medium-device-min: 767.8px; /**Tablets min**/
-$medium-device-max: 1024px; /**Tablets max**/
-
-/**Mixin For SCSS**/
-@mixin section-shadow {
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-}
-
-@mixin card-shadow {
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
-}
-
-@mixin generic-btn-style {
-    background: $gradient-color;
-    color: $option2-font-color;
-    font-size: 1rem;
-    font-weight: $medium-weight;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 1.5625rem;
-    padding: 0 1.5rem;
-    height: 3.125rem;
-    border: none;
-    transition: all 0.3s ease-in-out; /**For mouse in - mouse out smooth animation delay**/
-    min-width: 11.625rem;
-    &:hover {
-        opacity: 0.85; /**lighten btn hover**/
-        box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
-    }
-}
-
-/**Mixin Animation**/
-@mixin link-animation { /**For footer link**/
-    width: fit-content; /**For underline**/
-    background: $gradient-color3;
-    background-clip: text; /**For webkit-clip**/
-    background-size: 200% 100%; /**white font**/
-    background-position: -100%; /**White font before grad**/
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    &::before { /**Underline**/
-    content: "";
-    background: $gradient-color;
-    position: absolute;
-    bottom: -0.188rem; /**Underline pos**/
-    width: 0; /**Animation spawn**/
-    height: 0.188rem; /**Underline thickness**/
-    transition: all 0.3s ease-in-out;
-    }
-    &:hover {
-    background-position: 0;
-    }
-    &:hover::before {
-    width: 50%; /**Animation underline 0 to 50**/
-    }    
-}
 
 /**ALL**/
 
 * {
-    font-family: $main-font;
+    font-family: utilities.$main-font;
     scroll-behavior: smooth;
     &::selection {
-        color: darken($tertiary-color, 10);
+        color: darken(utilities.$tertiary-color, 10);
     }
 }
 
@@ -111,6 +25,10 @@ body, html {
     }
 }
 
+p {
+    margin: 0;
+}
+
 button {
     border: none;
     background-color: transparent;
@@ -118,7 +36,7 @@ button {
         cursor: pointer;
     }
     &.generic-btn {
-        @include generic-btn-style;
+        @include utilities.generic-btn-style;
     }
 }
 
@@ -144,57 +62,20 @@ a {
     align-items: center;
     &__top-logo {
         padding: 0.875rem 0 0.8125rem 0;
-        @include section-shadow;
+        @include utilities.section-shadow;
         z-index: 1; /**For box-shadow**/
         width: 100%;
         display: flex;
         justify-content: center;
         & img {
-            @media (min-width: $large-device) {
+            @media (min-width: utilities.$large-device) {
                 width: 12rem;
             }
         }
     }
 }
 
-/**Like Heart**/ 
-/**
-
-.like-button i {
-    position: absolute;
-}
-
-.fa-solid {
-    opacity: 0;
-    transition: all 1.2s ease-out;
-    &:hover {
-        opacity: 1;
-        background: $gradient-color2;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-}**/
-/**
-.like-button {
-    transition: all 0.3s ease-in-out;
-    > .fa-solid {
-        display: none;
-    }
-    &:hover {
-        > .fa-solid {
-            display: initial;
-            background: $gradient-color2;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        > .fa-regular {
-            display: none;
-        }
-    }
-}
-**/
+/**Like button**/
 
 @keyframes like-opacity {
     0% {
@@ -224,7 +105,7 @@ a {
     }
     & .fa-solid {
         transition: opacity 0.3s ease-in-out;
-        background: $gradient-color2;
+        background: utilities.$gradient-color2;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -239,53 +120,36 @@ a {
     }
 }
 
-/**
-.like-button {
-    & i {
-        position: absolute;
-    }
-    & .fa-solid {
-        opacity: 0;
-        height: 100%;
-        &:hover {
-            background: $gradient-color2;
-            animation: like 0.3s both;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    }
-    & .fa-regular {
-        opacity: 1;
-        height: 100%;
-        &:hover {
-            opacity: 0;
-        }
-    }
-}
-**/
 /**FOOTER**/
 
 .foot-site {
-    background: $dark-background;
-    color: $option2-font-color;
+    background: utilities.$dark-background;
+    color: utilities.$option2-font-color;
     padding: 1.38rem 1.56rem;
 
-        @media (min-width: $large-device) {
+        @media (min-width: utilities.$medium-device-min) {
             display: flex;
             flex-direction: row-reverse;
+            white-space: nowrap;
         }
     &__foot-title h3 {
-        font-family: $title_logo-font;
+        font-family: utilities.$title_logo-font;
         padding-bottom: 1rem;
-
-        @media (min-width: $large-device) {
+        @media (min-width: utilities.$medium-device-min) {
             padding-bottom: 0.5rem;
             margin-right: 2rem;
+            width: 4rem;
+        }
+        @media (min-width: utilities.$large-device) {
+            width: auto;
         }    
     }
     &__foot-nav {
-        @media (min-width: $large-device) {
+        @media (min-width: utilities.$medium-device-min) {
+            gap: 1.5rem;
+            margin-right: 2rem;
+        }
+        @media (min-width: utilities.$large-device) {
             gap: 3.5rem;
             margin-right: 5rem;
         }
@@ -293,18 +157,18 @@ a {
             display: flex;
             flex-direction: column;
             gap: 0.44rem;
-            font-weight: $medium-weight;
-            @media (min-width: $large-device) {
+            font-weight: utilities.$medium-weight;
+            @media (min-width: utilities.$medium-device-min) {
                 flex-direction: row;
             }
         }
         > .group-link-1 {
             padding-bottom: 0.44rem;
-            @media (min-width: $large-device) {
+            @media (min-width: utilities.$medium-device-min) {
                 padding-bottom: 0;
             }
         }
-            @media (min-width: $large-device) {
+            @media (min-width: utilities.$medium-device-min) {
                 display: flex;
                 align-items: center;
             }
@@ -313,7 +177,7 @@ a {
             margin-right: 0.69rem;
         }
         &__foot-link {
-            @include link-animation;
+            @include utilities.link-animation;
         }
     }
 }

@@ -1,96 +1,16 @@
-$title_logo-font: Shrikhand;
-$main-font: Roboto, sans-serif;
-$fontsize-resto-name: 1.598rem;
-$fontsize-category: 1rem;
-$fontsize-menu-choice1: 0.94rem;
-$fontsize-menu-choice2: 0.77rem;
-
-/**Font-weight For SCSS**/
-$light-weight: 300;
-$normal-weight: 400;
-$medium-weight: 500;
-$bold-weight: 700;
-$black-weight: 900;
-
-/**Color For SCSS**/
-$main-color: #9356DC; /**#9356DC primary purple**/
-$secondary-color: #FF79DA; /**#FF79DA secondary purple for gradient**/
-$tertiary-color: #99E2D0; /**#99E2D0 light green for some style details**/
-$dark-background: #353535; /**#353535 dark grey for background**/
-$background: #EAEAEA; /**EAEAEA grey for background**/
-$light-background: #F6F6F6; /**F6F6F6 light grey for background**/
-$extra-light-background: #FFFFFF; /**#FFFFFF white for background**/
-$option1-font-color: #353535; /**#353535 dark grey for font**/
-$option2-font-color: #FFFFFF; /**#FFFFFF white for font**/
-$option3-font-color: #7E7E7E; /**#7E7E7E light grey for font**/
-$option4-font-color: #008766; /**#008766 green for font**/
-$gradient-color: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%); /**Gradient for btn**/
-$gradient-color2: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%); /**Gradient for like icon**/
-$gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient for footer link**/
-
-/**Media breakpoint**/
-$large-device: 1025px; /**Laptops min / Desktops min**/
-$medium-device-min: 767.8px; /**Tablets min**/
-$medium-device-max: 1024px; /**Tablets max**/
-
-/**Mixin For SCSS**/
-@mixin section-shadow {
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-}
-
-@mixin card-shadow {
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
-}
-
-@mixin generic-btn-style {
-    background: $gradient-color;
-    color: $option2-font-color;
-    font-size: 1rem;
-    font-weight: $medium-weight;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 1.5625rem;
-    padding: 0 1.5rem;
-    height: 3.125rem;
-    border: none;
-    transition: all 0.3s ease-in-out; /**For mouse in - mouse out smooth animation delay**/
-    &:hover {
-        opacity: 0.85; /**lighten btn hover**/
-        box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
-    }
-}
+@use './utilities'; /**Variables and mixin - Redundant rules**/
 
 /**Header Back arrow**/
 
-@keyframes arrowbeat {
-  
-    0% {
-        transform: scale( 1 );
-    }
-    20% {
-        transform: scale( 1.25 );
-    }
-    40% {
-        transform: scale( 1 );
-    }
-    60% {
-        transform: scale( 1.25 );
-    }
-    80% {
-        transform: scale( 1 );
-    }
-    100% {
-        transform: scale( 1.25 );
-    }
-}
-
 .btn-page-return {
-    color: $option1-font-color;
+    color: utilities.$option1-font-color;
     position: absolute;
     left: 0.6rem;
     top: 1.15rem;
-    transition: transform 3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     &:hover {
-        animation: arrowbeat 3s ease-in-out;
+        transform: scale(1.2);
+        color: opacify(utilities.$tertiary-color, $amount: 1);
     }
 }
 
@@ -98,7 +18,7 @@ $medium-device-max: 1024px; /**Tablets max**/
 
 .r-m-hero {
     height: 12rem;
-    @media (min-width: $large-device) {
+    @media (min-width: utilities.$large-device) {
         height: 20rem;
     }
     &__r-m-picture img {
@@ -108,7 +28,7 @@ $medium-device-max: 1024px; /**Tablets max**/
         position: relative;
         z-index: -1;
         object-position: 50% 60%;
-        @media (min-width: $large-device) {
+        @media (min-width: utilities.$large-device) {
             height: 23.938rem;
         }
     }
@@ -117,18 +37,18 @@ $medium-device-max: 1024px; /**Tablets max**/
 /**Menu Container**/
 .r-menu-container {
     padding-top: 2rem;
-    @media (min-width: $medium-device-min) {
+    @media (min-width: utilities.$medium-device-min) {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    &__title-container { /**like+h1**/
+    &__resto-hat { /**like+h1**/
         display: flex;
         justify-content: space-between;
         gap: 1.03rem;
         & h1 {
-            font-family: $title_logo-font;
-            font-size: $fontsize-resto-name;
+            font-family: utilities.$title_logo-font;
+            font-size: utilities.$fontsize-resto-name;
         }
     }
 }
@@ -144,12 +64,12 @@ $medium-device-max: 1024px; /**Tablets max**/
 /**Menu**/
 
 .restaurant-menu {
-    background: $light-background;
+    background: utilities.$light-background;
     border-radius: 2.5rem 2.5rem 0 0;
     padding: 0 0.75rem;
     max-width: 1055px;
     margin: auto;
-    @media (min-width: $large-device) {
+    @media (min-width: utilities.$large-device) {
         width: 80%;
     }
     &__menu-btn-container {
@@ -189,34 +109,34 @@ $medium-device-max: 1024px; /**Tablets max**/
     }
 }
 
-.f-r-m-entrance { /**For initial load menu**/
+.menu-entrance { /**For first initial load menu**/
     animation: page-appear-ltr 0.7s 0.3s ease-in-out both;
 }
 
-.f-r-m-main { /**For initial load menu**/
+.menu-main { /**For second initial load menu**/
     animation: page-appear-rtl 1s 0.3s ease-in-out both;
 }
 
-.f-r-m-dessert { /**For initial load menu**/
+.menu-dessert { /**For third initial load menu**/
     animation: page-appear-ltr 1.3s 0.3s ease-in-out both;
 }
 
-.full-resto-menu {
+.menu-part {
     position: relative;
     margin: 1.25rem 0;
-    @media (min-width: $medium-device-min) {
+    @media (min-width: utilities.$medium-device-min) {
         width: 634px;
     }
-    &__title-resto-menu {
+    &__part-title {
         padding-bottom: 1.2rem;
         width: fit-content;
         & h2 {
-            font-size: $fontsize-category;
-            font-weight: $normal-weight;
+            font-size: utilities.$fontsize-category;
+            font-weight: utilities.$normal-weight;
         }
         &::after { /**Underline**/
             content: "";
-            background: $tertiary-color;
+            background: utilities.$tertiary-color;
             position: absolute; 
             margin-top: 0.3rem;
             width: 45px;
@@ -226,80 +146,70 @@ $medium-device-max: 1024px; /**Tablets max**/
     }
 }
 
-.all-r-option {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    white-space: nowrap;
-    &__resto-option {
-        background: $extra-light-background;
-        border-radius: 0.94rem;
-        padding: 0.81rem;
-        position: relative;
-        > .option-container {
-            display: flex;
-            flex-direction: column;
-        }
-        &__r-option-name {
-            font-size: $fontsize-menu-choice1;
-        }
-        &__r-option-ingredient {
-            font-weight: $light-weight;
-        }
-        &__r-option-price {
-            font-weight: $bold-weight;
-            transition: all 0.4s ease-in-out;
-            position: absolute;
-            right: 1rem;
-            top: 1.95rem;
-        }
-        & .menu-sub-option { /**Price + ingredient**/
-            font-size: $fontsize-menu-choice2;
-        }
-        &:hover {
-            cursor: pointer;
-        }
-        &:hover .r-option-name {
-            overflow-x: hidden; 
-            text-overflow: ellipsis;
-            max-width: 80%;
-            display: inline-block;
-        }
-        &:hover .r-option-ingredient {
-            overflow-x: hidden;
-            text-overflow: ellipsis;
-            max-width: 65%;
-            display: inline-block;
-        }
-        &:hover ~ .wrap-container {
-            transform: translate(-60px);
-            opacity: 1;
-        }
-        &:hover .r-option-price {
-            transform: translate(-60px);
-        }
+.menu-part {
+    &__all-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
     }
 }
-
-/**Check wrap**/
-
-.flex-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 0;
-}
-
-.wrap-container {
-    width: 3.72rem;
-    height: 4.191rem;
-    background: $tertiary-color;
+.menu-card {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 0 0.94rem 0.94rem 0;
-    opacity: 0;
-    transform: translate(0);
-    transition: all 0.4s ease-in-out;
-    &__wrap-icon {
-        color: $option2-font-color;
+    border-radius: 0.94rem;
+    background: utilities.$extra-light-background;
+    &__block-text {
+        padding: 0.81rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex: 1;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        > .menu-card-title {
+            font-size: utilities.$fontsize-menu-choice1;
+        }
+        > .menu-card-txt {
+            font-size: utilities.$fontsize-menu-choice2;
+        }
+
+        > .menu-card-title, .menu-card-txt {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+    & .menu-card-price {
+        height: 37px;
+        display: flex;
+        align-items: flex-end;
+        transition: all 0.5s ease-in-out;
+    }
+    & .wrap-check {
+        width: 3.72rem;
+        height: 4.191rem;
+        background: utilities.$tertiary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 0.94rem 0.94rem 0;
+        margin-left: 1rem;
+        margin-right: -4rem;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        & .fa-circle-check {
+            color: utilities.$option2-font-color;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &:hover .wrap-check {
+        margin-right: 0;
+        opacity: 1;
+    }
+    &:hover .menu-card-price {
+        transform: translate(0);
     }
 }

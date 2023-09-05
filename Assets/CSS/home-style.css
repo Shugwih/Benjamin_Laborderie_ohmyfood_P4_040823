@@ -1,5 +1,9 @@
-/**For h1 large device**/
-/**For hero-decription large device**/
+/**Font**/
+/**For menu page card title**/
+/**For menu page card txt**/
+/**For home h1 large device**/
+/**For home hero-decription large device**/
+/**For home h1 tablet**/
 /**Font-weight For SCSS**/
 /**Color For SCSS**/
 /**#9356DC primary purple**/
@@ -17,11 +21,13 @@
 /**Gradient for like icon**/
 /**Gradient for footer link**/
 /**Media breakpoint**/
+/**HQ - Only use for footer now**/
 /**Laptops min / Desktops min**/
 /**Tablets min**/
 /**Tablets max**/
 /**Mixin For SCSS**/
 /**Mixin Animation**/
+/**Variables and mixin - Redundant rules**/
 /**Loader**/
 @keyframes rotate {
   0% {
@@ -190,9 +196,6 @@
 }
 .guide__g-container__g-all-step {
   margin: 0 0 4.25rem 0;
-  /* display: flex; */
-  /* flex-flow: row wrap; */
-  /* justify-content: center; */
   display: grid;
   grid-template-columns: 1fr;
   width: 100%;
@@ -216,14 +219,12 @@
   border-radius: 1.25rem;
   padding: 1rem 0;
   margin: 1.56rem 1.25rem 0 2.03rem;
-  /**width: 100%;**/
   background-color: #F6F6F6;
   font-weight: 500;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 }
 @media (min-width: 767.8px) {
   .g-all-step__g-step {
-    /**width: 20.16538rem;**/
     margin-left: 1.2rem;
     min-width: 14.5rem;
   }

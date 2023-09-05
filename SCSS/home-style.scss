@@ -1,91 +1,4 @@
-$title_logo-font: Shrikhand;
-$main-font: Roboto, sans-serif;
-$fontsize-hero-title-desktop: 2.5rem; /**For h1 large device**/
-$fontsize-hero-description: 1.125rem; /**For hero-decription large device**/
-$fontsize-hero-title-tablet: 2rem;
-
-/**Font-weight For SCSS**/
-$light-weight: 300;
-$normal-weight: 400;
-$medium-weight: 500;
-$bold-weight: 700;
-$black-weight: 900;
-
-/**Color For SCSS**/
-$main-color: #9356DC; /**#9356DC primary purple**/
-$secondary-color: #FF79DA; /**#FF79DA secondary purple for gradient**/
-$tertiary-color: #99E2D0; /**#99E2D0 light green for some style details**/
-$dark-background: #353535; /**#353535 dark grey for background**/
-$background: #EAEAEA; /**EAEAEA grey for background**/
-$light-background: #F6F6F6; /**F6F6F6 light grey for background**/
-$extra-light-background: #FFFFFF; /**#FFFFFF white for background**/
-$option1-font-color: #353535; /**#353535 dark grey for font**/
-$option2-font-color: #FFFFFF; /**#FFFFFF white for font**/
-$option3-font-color: #7E7E7E; /**#7E7E7E light grey for font**/
-$option4-font-color: #008766; /**#008766 green for font**/
-$gradient-color: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%); /**Gradient for btn**/
-$gradient-color2: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%); /**Gradient for like icon**/
-$gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient for footer link**/
-
-/**Media breakpoint**/
-$large-device: 1025px; /**Laptops min / Desktops min**/
-$medium-device-min: 767.8px; /**Tablets min**/
-$medium-device-max: 1024px; /**Tablets max**/
-
-/**Mixin For SCSS**/
-@mixin section-shadow {
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-}
-
-@mixin card-shadow {
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
-}
-
-@mixin generic-btn-style {
-    background: $gradient-color;
-    color: $option2-font-color;
-    font-size: 1rem;
-    font-weight: $medium-weight;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 1.5625rem;
-    padding: 0 1.5rem;
-    height: 3.125rem;
-    margin-top: 1rem;
-    border: none;
-    transition: all 0.3s ease-in-out; /**For mouse in - mouse out smooth animation delay**/
-    &:hover {
-        opacity: 0.85; /**lighten btn hover**/
-        box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
-    }
-}
-
-/**Mixin Animation**/
-@mixin link-animation { /**For footer link**/
-    width: fit-content; /**For underline**/
-    background: $gradient-color3;
-    background-clip: text; /**For webkit-clip**/
-    background-size: 200% 100%; /**white font**/
-    background-position: -100%; /**White font before grad**/
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    &::before { /**Underline**/
-    content: "";
-    background: $gradient-color;
-    position: absolute;
-    bottom: -0.188rem; /**Underline pos**/
-    width: 0; /**Animation spawn**/
-    height: 0.188rem; /**Underline thickness**/
-    transition: all 0.3s ease-in-out;
-    }
-    &:hover {
-    background-position: 0;
-    }
-    &:hover::before {
-    width: 50%; /**Animation underline 0 to 50**/
-    }    
-}
+@use './utilities'; /**Variables and mixin - Redundant rules**/
 
 /**Loader**/
 
@@ -151,15 +64,15 @@ $medium-device-max: 1024px; /**Tablets max**/
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: $background;
+    background: utilities.$background;
     animation: loading-end 3s 0s ease-out both;
     &__container-loader {
         height: 50%;
     }
     .prime-item {
-        border-top: 1rem solid $main-color;
+        border-top: 1rem solid utilities.$main-color;
         border-right: 1rem solid transparent;
-        border-bottom: 1rem solid $main-color;
+        border-bottom: 1rem solid utilities.$main-color;
         border-left: 1rem solid transparent;
         border-radius: 50%;
         position: relative;
@@ -173,9 +86,9 @@ $medium-device-max: 1024px; /**Tablets max**/
     }
     .secondary-item {
         border-top: 0.5rem solid transparent;
-        border-right: 0.5rem solid $tertiary-color;
-        border-bottom: 0.5rem dashed $tertiary-color;
-        border-left: 0.5rem solid $tertiary-color;
+        border-right: 0.5rem solid utilities.$tertiary-color;
+        border-bottom: 0.5rem dashed utilities.$tertiary-color;
+        border-left: 0.5rem solid utilities.$tertiary-color;
         border-radius: 50%;
         position: relative;
         bottom: 7rem;
@@ -188,7 +101,7 @@ $medium-device-max: 1024px; /**Tablets max**/
         }
     }
     .core-item {
-        border: 0.3rem solid $main-color;
+        border: 0.3rem solid utilities.$main-color;
         border-radius: 50%;
         position: relative;
         bottom: 16.5rem;
@@ -203,32 +116,32 @@ $medium-device-max: 1024px; /**Tablets max**/
 
 .hero {
     &__hero-geolocation {
-        background-color: $background;
-        font-weight: $medium-weight;
+        background-color: utilities.$background;
+        font-weight: utilities.$medium-weight;
         display: flex;
         justify-content: center;
         gap: 1.0625rem;
         width: 100%;
         padding: 1rem 0 1rem 0;
-        color: $option1-font-color;
+        color: utilities.$option1-font-color;
     }
     &__hero-all {
         text-align: center;
-        background-color: $light-background;
+        background-color: utilities.$light-background;
         padding: 1.3rem;
         &__hero-title h1 {
-            @media (min-width: $large-device) {
-                font-size: $fontsize-hero-title-desktop;
+            @media (min-width: utilities.$large-device) {
+                font-size: utilities.$fontsize-hero-title-desktop;
             }
-            @media (min-width: $medium-device-min) and (max-width: $medium-device-max) {
-                font-size: $fontsize-hero-title-tablet;
+            @media (min-width: utilities.$medium-device-min) and (max-width: utilities.$medium-device-max) {
+                font-size: utilities.$fontsize-hero-title-tablet;
             }
         }
         &__hero-description{
             margin: 1.688rem 0;
-            color: $option1-font-color;
-            @media (min-width: $large-device) {
-                font-size: $fontsize-hero-description;
+            color: utilities.$option1-font-color;
+            @media (min-width: utilities.$large-device) {
+                font-size: utilities.$fontsize-hero-description;
             }
         }
     }
@@ -237,35 +150,32 @@ $medium-device-max: 1024px; /**Tablets max**/
 /**Guide**/
 
 .guide {
-    @media (min-width: $large-device) {
+    @media (min-width: utilities.$large-device) {
         display: flex;
         justify-content: center;
     }
     &__g-container {
-        @media (min-width: $large-device) {
+        @media (min-width: utilities.$large-device) {
             display: flex;
             flex-direction: column;
             width: 1069px;
         }
         &__g-title h2 {
             padding: 3rem 5rem 0 1.25rem;
-            @media (min-width: $large-device) {
+            @media (min-width: utilities.$large-device) {
                 padding: 3rem 5rem 0 1.1rem;
             }
         }
         &__g-all-step {
             margin: 0 0 4.25rem 0;
-            /* display: flex; */
-            /* flex-flow: row wrap; */
-            /* justify-content: center; */
             display: grid;
             grid-template-columns: 1fr;
             width: 100%;
-            @media (min-width: $medium-device-min) {
+            @media (min-width: utilities.$medium-device-min) {
                 grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
                 white-space: nowrap;
             }
-            @media (min-width: $large-device) {
+            @media (min-width: utilities.$large-device) {
                 display: grid;
                 grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
                 grid-gap: 0.5rem;
@@ -280,16 +190,14 @@ $medium-device-max: 1024px; /**Tablets max**/
         border-radius: 1.25rem;
         padding: 1rem 0;
         margin: 1.56rem 1.25rem 0 2.03rem;
-        /**width: 100%;**/
-        background-color: $light-background;
-        font-weight: $medium-weight;
+        background-color: utilities.$light-background;
+        font-weight: utilities.$medium-weight;
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-        @media (min-width: $medium-device-min) {
-            /**width: 20.16538rem;**/
+        @media (min-width: utilities.$medium-device-min) {
             margin-left: 1.2rem;
             min-width: 14.5rem;
         }
-        @media (min-width: $large-device) {
+        @media (min-width: utilities.$large-device) {
             width: 18.16538rem;
         }
         &__g-number-order {
@@ -300,13 +208,13 @@ $medium-device-max: 1024px; /**Tablets max**/
             border-radius: 50%;
             width: 1.5rem;
             height: 1.5rem;
-            background-color: $main-color;
-            color: $option2-font-color;
+            background-color: utilities.$main-color;
+            color: utilities.$option2-font-color;
             font-size: 0.88638rem;
-            font-weight: $medium-weight;
+            font-weight: utilities.$medium-weight;
             position: relative;
             right: 14px;
-            @media (min-width: $medium-device-min) and (max-width: $medium-device-max) {
+            @media (min-width: utilities.$medium-device-min) and (max-width: utilities.$medium-device-max) {
                 width: 1.1rem;
                 height: 1.1rem;
             }
@@ -315,10 +223,10 @@ $medium-device-max: 1024px; /**Tablets max**/
             padding: 0 0.9rem 0 0.81rem;
         }
         &__stepfa {
-            color: $option3-font-color;
+            color: utilities.$option3-font-color;
         }
         &__stepfa.fa-solid.fa-store {
-            color: $main-color;
+            color: utilities.$main-color;
         }
     }
 }
@@ -326,8 +234,8 @@ $medium-device-max: 1024px; /**Tablets max**/
 /**Restaurants**/
 
 .restaurant {
-    background-color: $light-background;
-    @media (min-width: $large-device) {
+    background-color: utilities.$light-background;
+    @media (min-width: utilities.$large-device) {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -338,7 +246,7 @@ $medium-device-max: 1024px; /**Tablets max**/
     position: relative;
     padding-bottom: 4.13rem;
     &__resto-title {
-        @media (min-width: $large-device) {
+        @media (min-width: utilities.$large-device) {
             display: flex;
             justify-content: flex-start;
             width: 100%;
@@ -350,10 +258,10 @@ $medium-device-max: 1024px; /**Tablets max**/
     &__r-card-all {
         display: grid;
         grid-gap: 1.25rem;
-        @media (min-width: $medium-device-min) {
+        @media (min-width: utilities.$medium-device-min) {
             grid-template-columns: minmax(475px, auto) 1fr;
         }
-        @media (min-width: $medium-device-min) and (max-width: $medium-device-max) {
+        @media (min-width: utilities.$medium-device-min) and (max-width: utilities.$medium-device-max) {
             margin: 0 1rem;
             grid-template-columns: repeat(2, 1fr);
         }
@@ -363,14 +271,14 @@ $medium-device-max: 1024px; /**Tablets max**/
 .r-card {
     position: relative;
     margin: 0 1.12rem 0 1.06rem;
-    background-color: $extra-light-background;
+    background-color: utilities.$extra-light-background;
     border-radius: 0.94rem;
-    @include card-shadow;
+    @include utilities.card-shadow;
     transition: all 0.2s ease-in-out; /**scale delay**/
-    @media (min-width: $large-device) {
+    @media (min-width: utilities.$large-device) {
         width: 490px;
     }
-    @media (min-width: $medium-device-min) and (max-width: $medium-device-max) {
+    @media (min-width: utilities.$medium-device-min) and (max-width: utilities.$medium-device-max) {
         margin: 0;
     }
     &:hover {
@@ -390,14 +298,13 @@ $medium-device-max: 1024px; /**Tablets max**/
     }
 }
 
-
 .r-picture {
     &__r-new {
         position: absolute;
         right: 1rem;
         margin-top: 1rem;
-        background-color: $tertiary-color;
-        color: $option4-font-color;
+        background-color: utilities.$tertiary-color;
+        color: utilities.$option4-font-color;
         padding: 0.44rem 0.6rem 0.37rem 0.56rem;
         border-radius: 0.13rem;
     }

@@ -1,0 +1,92 @@
+/**Font**/
+$title_logo-font: Shrikhand;
+$main-font: Roboto, sans-serif;
+$fontsize-resto-name: 1.598rem;
+$fontsize-category: 1rem;
+$fontsize-menu-choice1: 0.94rem; /**For menu page card title**/
+$fontsize-menu-choice2: 0.77rem; /**For menu page card txt**/
+$fontsize-hero-title-desktop: 2.5rem; /**For home h1 large device**/
+$fontsize-hero-description: 1.125rem; /**For home hero-decription large device**/
+$fontsize-hero-title-tablet: 2rem; /**For home h1 tablet**/
+/**Font-weight For SCSS**/
+$light-weight: 300;
+$normal-weight: 400;
+$medium-weight: 500;
+$bold-weight: 700;
+$black-weight: 900;
+
+/**Color For SCSS**/
+$main-color: #9356DC; /**#9356DC primary purple**/
+$secondary-color: #FF79DA; /**#FF79DA secondary purple for gradient**/
+$tertiary-color: #99E2D0; /**#99E2D0 light green for some style details**/
+$dark-background: #353535; /**#353535 dark grey for background**/
+$background: #EAEAEA; /**EAEAEA grey for background**/
+$light-background: #F6F6F6; /**F6F6F6 light grey for background**/
+$extra-light-background: #FFFFFF; /**#FFFFFF white for background**/
+$option1-font-color: #353535; /**#353535 dark grey for font**/
+$option2-font-color: #FFFFFF; /**#FFFFFF white for font**/
+$option3-font-color: #7E7E7E; /**#7E7E7E light grey for font**/
+$option4-font-color: #008766; /**#008766 green for font**/
+$gradient-color: linear-gradient(182deg, #FF79DA 0%, #9356DC 100%); /**Gradient for btn**/
+$gradient-color2: linear-gradient(357deg, #FF79DA 0%, #9356DC 100%); /**Gradient for like icon**/
+$gradient-color3: linear-gradient(270deg, #FFFFFF 50%, #FF79DA 50%); /**Gradient for footer link**/
+
+/**Media breakpoint**/
+$large-device: 1025px; /**Laptops min / Desktops min**/
+$medium-device-min: 767.8px; /**Tablets min**/
+$medium-device-max: 1024px; /**Tablets max**/
+
+/**Mixin For SCSS**/
+@mixin section-shadow {
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+@mixin card-shadow {
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
+}
+
+@mixin generic-btn-style {
+    background: $gradient-color;
+    color: $option2-font-color;
+    font-size: 1rem;
+    font-weight: $medium-weight;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 1.5625rem;
+    padding: 0 1.5rem;
+    height: 3.125rem;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    min-width: 11.625rem;
+    &:hover {
+        opacity: 0.85; /**lighten btn hover**/
+        box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/**Mixin Animation footer**/
+@mixin link-animation { /**For footer link**/
+    width: fit-content; /**For underline**/
+    background: $gradient-color3;
+    background-clip: text; /**For webkit-clip**/
+    background-size: 200% 100%; /**white font**/
+    background-position: -100%; /**White font before grad**/
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    &::before { /**Underline**/
+    content: "";
+    background: $gradient-color;
+    position: absolute;
+    bottom: -0.188rem; /**Underline pos**/
+    width: 0; /**Animation spawn**/
+    height: 0.188rem; /**Underline thickness**/
+    transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+    background-position: 0;
+    }
+    &:hover::before {
+    width: 50%; /**Animation underline 0 to 50**/
+    }    
+}
